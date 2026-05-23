@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Fredoka", "Inter", sans-serif;
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Natural Tones Theme Color Mappings */
+  --color-sand-50: #FAF8F5;
+  --color-sand-100: #F9F7F2;
+  --color-sand-200: #F1ECE1;
+  --color-sand-300: #E3D9C4;
+  
+  --color-sage-50: #F0F4E8;
+  --color-sage-100: #E6EFE2;
+  --color-sage-200: #D0DFC0;
+  --color-sage-400: #9CB69A;
+  --color-sage-450: #8BA888;
+  --color-sage-500: #799478;
+  --color-sage-600: #5F745E;
+
+  --color-tan-50: #FAF4EB;
+  --color-tan-100: #F5EAE0;
+  --color-tan-400: #E6D2B8;
+  --color-tan-500: #D2B48C;
+  --color-tan-600: #BA9D76;
+
+  --color-wood-50: #FAF6F0;
+  --color-wood-100: #F5EFEB;
+  --color-wood-500: #A67C52;
+  --color-wood-600: #8E6A46;
+  --color-wood-700: #755535;
+
+  --color-mud-700: #5B544B;
+  --color-mud-800: #4A453E;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Animal Habitat Explorer",
+  "description": "An interactive educational scavenger hunt and quiz game for kids to explore world animal habitats, find hidden animals, take quizzes, and earn badges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
