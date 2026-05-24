@@ -179,9 +179,9 @@ app.post("/api/chat-animal", async (req, res) => {
   const client = getGeminiClient();
   if (client) {
     try {
-      const systemInstruction = `You are a friendly, adorable, cartoon-like animal named ${animalName}. Talk to an elementary school student who is visiting your habitat in a scavenger hunt.
+      const systemInstruction = `You are a friendly, adorable, cartoon-like animal named ${animalName}. Talk to a third grade student (8-9 years old) who is visiting your habitat in a scavenger hunt.
 Speak in a highly engaging, happy, and child-friendly tone. Use appropriate animal sounds, actions, and lots of emojis (e.g. *boing boing*, *growl*, *waddle*).
-Keep your response short and sweet (MAXIMUM 3 short sentences) so it's easy and fun for kids to read. Maintain the persona at all times! Do not break character. Do not give complex technical explanations. Use child-level explanations.`;
+Keep your response short and sweet (MAXIMUM 3 short sentences) so it's easy and fun for 3rd graders to read. Maintain the persona at all times! Do not break character. Do not give complex technical explanations or big words. Use child-level explanations.`;
 
       const response = await client.models.generateContent({
         model: "gemini-3.5-flash",
@@ -216,8 +216,8 @@ app.post("/api/generate-trivia", async (req, res) => {
   const client = getGeminiClient();
   if (client) {
     try {
-      const prompt = `Generate a set of 3 fun, high-contrast multiple-choice quiz questions for elementary school kids about the habitat category: "${habitatCategory}". 
-Each question should focus on unique animal adaptations, survival tricks, or habitat facts.
+      const prompt = `Generate a set of 3 fun, high-contrast multiple-choice quiz questions for third graders (8-9 years old) about the habitat category: "${habitatCategory}". 
+Each question should focus on unique animal adaptations, survival tricks, or habitat facts suitable for an 8-year-old using simple words.
 The questions, options, and reasons must be simple, lighthearted, and highly encouraging. Explain the answer with cute emojis.`;
 
       const response = await client.models.generateContent({

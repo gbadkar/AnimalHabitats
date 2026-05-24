@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { ArrowLeft, Wind, Sun, ShieldAlert, Sparkles, CheckCircle, RefreshCcw, Landmark, Layers } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowLeft, Wind, Sun, Sparkles, RefreshCcw, Landmark } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface AdaptationLabProps {
@@ -9,19 +9,19 @@ interface AdaptationLabProps {
 export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
   const [activeGame, setActiveGame] = useState<"trophic" | "thermal" | "camouflage">("trophic");
 
-  // Game 1: Trophic Level Predator Sorter
+  // Game 1: Yummy Snack Sorter for the Jaguar
   const [trophicScore, setTrophicScore] = useState(0);
   const [trophicQueue, setTrophicQueue] = useState<Array<{ id: string; name: string; emoji: string; category: "prey" | "producer" | "toxic"; fact: string }>>([
-    { id: "capybara", name: "Capybara", emoji: "🐹", category: "prey", fact: "Primary consumer. Massive, high-moisture vegetation grazer—a staple prey for apex predators." },
-    { id: "caiman", name: "Spectacled Caiman", emoji: "🐊", category: "prey", fact: "Secondary consumer. Semi-aquatic predator, but vulnerable to mature feline jaws." },
-    { id: "kapok_leaf", name: "Kapok Canopy Leaves", emoji: "🍃", category: "producer", fact: "Primary producer. Rich in cellulose which felines cannot biochemically process." },
-    { id: "poison_frog", name: "Poison Dart Frog", emoji: "🐸", category: "toxic", fact: "Toxic Secondary consumer. Accumulates hyper-lethal skin alkaloids from dietary forest beetles." },
-    { id: "brazil_nut", name: "Brazil Nut Pod", emoji: "🌰", category: "producer", fact: "Primary producer. Extremely tough vascular pod containing seeds with complex lipids." },
-    { id: "fresh_trout", name: "River Bass/Trout", emoji: "🐟", category: "prey", fact: "Secondary consumer. High-protein water resource targeted frequently by jaguars." },
-    { id: "tapir", name: "Baird's Tapir", emoji: "🐗", category: "prey", fact: "Primary consumer. Muscular forest-floor herbivore. High metabolic tissue volume." },
-    { id: "orchid_flower", name: "Fringe Orchid", emoji: "🌸", category: "producer", fact: "Primary producer. Epiphytic flower collecting solar sugars for nectar-dependent insects." }
+    { id: "capybara", name: "Capybara", emoji: "🐹", category: "prey", fact: "Capybaras are large, friendly water-rodents. They are a jaguar's favorite crunchy meat meal!" },
+    { id: "caiman", name: "Caiman", emoji: "🐊", category: "prey", fact: "Caimans are like baby crocodiles, but strong jaguars can easily catch them in the river!" },
+    { id: "kapok_leaf", name: "Jungle Leaves", emoji: "🍃", category: "producer", fact: "Green leaves are great for insects and sloths, but big jaguars can't eat or digest plant leaves!" },
+    { id: "poison_frog", name: "Poison Frog", emoji: "🐸", category: "toxic", fact: "This bright frog is packed with dangerous poison! If a jaguar eats it, they will get super sick!" },
+    { id: "brazil_nut", name: "Brazil Nuts", emoji: "🌰", category: "producer", fact: "Nuts are way too hard to crack, and jaguars only eat fresh muscle-protein!" },
+    { id: "fresh_trout", name: "River Fish", emoji: "🐟", category: "prey", fact: "Jaguars are amazing swimmers and love catching fish in the lazy rivers!" },
+    { id: "tapir", name: "Tapir", emoji: "🐗", category: "prey", fact: "Tapirs are chunky pig-like forest creatures. They make a perfect big cat dinner!" },
+    { id: "orchid_flower", name: "Jungle Orchid", emoji: "🌸", category: "producer", fact: "Flowers are pretty to look at, but big cats do not eat salad!" }
   ]);
-  const [trophicFeedback, setTrophicFeedback] = useState<string | null>("Sort the dietary organic inputs on the right for our tertiary predator, the Jaguar!");
+  const [trophicFeedback, setTrophicFeedback] = useState<string | null>("Let's feed the hungry jaguar! Look at the conveyor belt and choose: feed or discard!");
   const [trophicDone, setTrophicDone] = useState(false);
 
   const handleTrophicSort = (userDecision: "ingest" | "discard") => {
@@ -34,19 +34,19 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
     if (userDecision === "ingest") {
       if (currentItem.category === "prey") {
         isCorrect = true;
-        feedback = `✓ Correct! ${currentItem.emoji} ${currentItem.name} is a high-protein animal. ${currentItem.fact}`;
+        feedback = `✓ Yummy! ${currentItem.emoji} ${currentItem.name} is a great, healthy meat snack. ${currentItem.fact}`;
       } else if (currentItem.category === "toxic") {
-        feedback = `❌ Critical Failure! Ingesting the toxic ${currentItem.emoji} ${currentItem.name} triggers lethal bioaccumulation of alkaloids!`;
+        feedback = `❌ Oh no! Ingesting the toxic ${currentItem.emoji} ${currentItem.name} makes the jaguar super sick from bad frog poisons!`;
       } else {
-        feedback = `❌ Incorrect. The Jaguar is an obligate carnivore. It cannot digest cellulose-based primary producers like ${currentItem.emoji} ${currentItem.name}.`;
+        feedback = `❌ Oops! The Jaguar is a meat-eater cat (carnivore). It cannot digest plant-based things like ${currentItem.emoji} ${currentItem.name}.`;
       }
     } else {
       // User chose to discard/filter out
       if (currentItem.category === "producer" || currentItem.category === "toxic") {
         isCorrect = true;
-        feedback = `✓ Wise decision! Discarded the ${currentItem.emoji} ${currentItem.name}. ${currentItem.fact}`;
+        feedback = `✓ Great choice! Put away the ${currentItem.emoji} ${currentItem.name}. ${currentItem.fact}`;
       } else {
-        feedback = `❌ Sub-optimal choice. Discarding the rich prey ${currentItem.emoji} ${currentItem.name} leaves the predator's caloric baseline unfulfilled.`;
+        feedback = `❌ Oh, wait! The jaguar is hungry! Discarding the rich prey ${currentItem.emoji} ${currentItem.name} leaves the jaguar's tummy empty!`;
       }
     }
 
@@ -66,43 +66,38 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
   const resetTrophicGame = () => {
     setTrophicScore(0);
     setTrophicQueue([
-      { id: "capybara", name: "Capybara", emoji: "🐹", category: "prey", fact: "Primary consumer. Large vegetarian rodent representing a critical source of high-density lipids." },
-      { id: "caiman", name: "Spectacled Caiman", emoji: "🐊", category: "prey", fact: "Secondary consumer. Aquatically locked predator, but preyed upon by ambush felines." },
-      { id: "kapok_leaf", name: "Kapok Leaves", emoji: "🍃", category: "producer", fact: "Primary producer. Composed of structural cellulose that carnivore guts cannot break down." },
-      { id: "poison_frog", name: "Poison Dart Frog", emoji: "🐸", category: "toxic", fact: "Toxic organism. Its vibrant aposematism warns of deadly neuromuscular alkaloids." },
-      { id: "brazil_nut", name: "Brazil Nut Pod", emoji: "🌰", category: "producer", fact: "Primary producer. Highly fibrous seed pod requiring dynamic mechanical force to crack." },
-      { id: "fresh_trout", name: "River Bass", emoji: "🐟", category: "prey", fact: "Secondary consumer. Abundant aquatic food resource rich in Omega-3 fatty acids." },
-      { id: "tapir", name: "Baird's Tapir", emoji: "🐗", category: "prey", fact: "Primary consumer. Heavy-bodied jungle ungulate providing massive protein returns." },
-      { id: "orchid_flower", name: "Orchid Nectar", emoji: "🌸", category: "producer", fact: "Primary producer. Simple aqueous sugar which is structurally useless to apex felines." }
+      { id: "capybara", name: "Capybara", emoji: "🐹", category: "prey", fact: "Capybaras are large, friendly water-rodents. They are a jaguar's favorite crunchy meat meal!" },
+      { id: "caiman", name: "Caiman", emoji: "🐊", category: "prey", fact: "Caimans are like baby crocodiles, but strong jaguars can easily catch them in the river!" },
+      { id: "kapok_leaf", name: "Jungle Leaves", emoji: "🍃", category: "producer", fact: "Green leaves are great for insects and sloths, but big jaguars can't eat or digest plant leaves!" },
+      { id: "poison_frog", name: "Poison Frog", emoji: "🐸", category: "toxic", fact: "This bright frog is packed with dangerous poison! If a jaguar eats it, they will get super sick!" },
+      { id: "brazil_nut", name: "Brazil Nuts", emoji: "🌰", category: "producer", fact: "Nuts are way too hard to crack, and jaguars only eat fresh muscle-protein!" },
+      { id: "fresh_trout", name: "River Fish", emoji: "🐟", category: "prey", fact: "Jaguars are amazing swimmers and love catching fish in the lazy rivers!" },
+      { id: "tapir", name: "Tapir", emoji: "🐗", category: "prey", fact: "Tapirs are chunky pig-like forest creatures. They make a perfect big cat dinner!" },
+      { id: "orchid_flower", name: "Jungle Orchid", emoji: "🌸", category: "producer", fact: "Flowers are pretty to look at, but big cats do not eat salad!" }
     ]);
-    setTrophicFeedback("Ecologist Lab operational. Sort inputs on the conveyor belt!");
+    setTrophicFeedback("Conveyor belt loaded. Feed the Jaguar!");
     setTrophicDone(false);
   };
 
-
-  // Game 2: Thermal Convection Huddle (Penguin Huddle Solver)
+  // Game 2: Cozy Penguin Huddle Game (Penguin Huddle Solver)
   const [huddle, setHuddle] = useState<Array<{ id: number; name: string; emoji: string; temp: "cold" | "optimal" | "hyperthermic" }>>([
-    { id: 1, name: "Outer Chick A", emoji: "👶", temp: "cold" },
-    { id: 2, name: "Outer Chick B", emoji: "👶", temp: "cold" },
-    { id: 3, name: "Outer Chick C", emoji: "👶", temp: "cold" },
-    { id: 4, name: "Core Chick D", emoji: "🐧", temp: "hyperthermic" },
-    { id: 5, name: "Core Chick E", emoji: "🐧", temp: "hyperthermic" },
-    { id: 6, name: "Core Chick F", emoji: "🐧", temp: "optimal" },
+    { id: 1, name: "Baby Chick A", emoji: "👶", temp: "cold" },
+    { id: 2, name: "Baby Chick B", emoji: "👶", temp: "cold" },
+    { id: 3, name: "Baby Chick C", emoji: "👶", temp: "cold" },
+    { id: 4, name: "Pals Chick D", emoji: "🐧", temp: "hyperthermic" },
+    { id: 5, name: "Pals Chick E", emoji: "🐧", temp: "hyperthermic" },
+    { id: 6, name: "Pals Chick F", emoji: "🐧", temp: "optimal" },
     { id: 7, name: "Middle Chick G", emoji: "👶", temp: "optimal" },
     { id: 8, name: "Middle Chick H", emoji: "👶", temp: "optimal" },
-    { id: 9, name: "Outer Chick I", emoji: "👶", temp: "cold" }
+    { id: 9, name: "Baby Chick I", emoji: "👶", temp: "cold" }
   ]);
   const [thermalCycles, setThermalCycles] = useState(0);
   const [thermalResult, setThermalResult] = useState("");
 
   const cycleWindConvection = () => {
-    // Simmons wind drafts
     setHuddle((prev) => {
       const copy = [...prev];
-      // Core chicks are indexes 3, 4, 5
-      // Outer chicks are indexes 0, 1, 2, 8
-      // Middle are 6, 7
-      // Convection cycle: Outers become colder, Cores become hotter
+      // outer chicks index: 0, 1, 2, 8
       copy[0].temp = "cold";
       copy[1].temp = "cold";
       copy[2].temp = "cold";
@@ -120,14 +115,13 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
     setThermalCycles((prev) => {
       const next = prev + 1;
       if (next >= 4) {
-        // Calculate success
         const coldCount = huddle.filter(c => c.temp === "cold").length;
         const hyperCount = huddle.filter(c => c.temp === "hyperthermic").length;
         if (coldCount === 0 && hyperCount <= 2) {
-          setThermalResult("✓ High success! You kept all chicks insulated above freezing and rotated core body temperatures perfectly! 🐧❄️");
+          setThermalResult("✓ High success! You kept all the baby chicks warm and cozy above freezing. High-fives! 🐧❄️");
           confetti({ particleCount: 70, spread: 80 });
         } else {
-          setThermalResult("❌ Suboptimal rotation. Some outer chicks suffered thermal frost shock, or core chicks over-heated. Rotate faster!");
+          setThermalResult("❌ Brrr! Some outer chicks stayed chilly, or center ones got too hot. Press Reset and click faster to help them take turns!");
         }
       }
       return next;
@@ -142,9 +136,6 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
       copy[index1] = copy[index2];
       copy[index2] = tempObj;
 
-      // Swap adjustments: moving to core warms up, moving to outer cools down
-      // Index indices 3, 4, 5 are the core
-      // Let's adjust temperatures dynamically based on destination
       const isCore = (idx: number) => idx === 3 || idx === 4 || idx === 5;
       const isOuter = (idx: number) => idx === 0 || idx === 1 || idx === 2 || idx === 8;
 
@@ -170,23 +161,22 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
 
   const resetThermalGame = () => {
     setHuddle([
-      { id: 1, name: "Outer Chick A", emoji: "👶", temp: "cold" },
-      { id: 2, name: "Outer Chick B", emoji: "👶", temp: "cold" },
-      { id: 3, name: "Outer Chick C", emoji: "👶", temp: "cold" },
-      { id: 4, name: "Core Chick D", emoji: "🐧", temp: "hyperthermic" },
-      { id: 5, name: "Core Chick E", emoji: "🐧", temp: "hyperthermic" },
-      { id: 6, name: "Core Chick F", emoji: "🐧", temp: "optimal" },
+      { id: 1, name: "Baby Chick A", emoji: "👶", temp: "cold" },
+      { id: 2, name: "Baby Chick B", emoji: "👶", temp: "cold" },
+      { id: 3, name: "Baby Chick C", emoji: "👶", temp: "cold" },
+      { id: 4, name: "Pals Chick D", emoji: "🐧", temp: "hyperthermic" },
+      { id: 5, name: "Pals Chick E", emoji: "🐧", temp: "hyperthermic" },
+      { id: 6, name: "Pals Chick F", emoji: "🐧", temp: "optimal" },
       { id: 7, name: "Middle Chick G", emoji: "👶", temp: "optimal" },
       { id: 8, name: "Middle Chick H", emoji: "👶", temp: "optimal" },
-      { id: 9, name: "Outer Chick I", emoji: "👶", temp: "cold" }
+      { id: 9, name: "Baby Chick I", emoji: "👶", temp: "cold" }
     ]);
     setThermalCycles(0);
     setThermalResult("");
   };
 
-
-  // Game 3: Wavelength Camouflage Scanner
-  const [spectrum, setSpectrum] = useState(500); // 400nm (UV) to 800nm (Infrared)
+  // Game 3: Super Nature Goggles (Camouflage Finder)
+  const [spectrum, setSpectrum] = useState(500);
   const [scannedSpecimen, setScannedSpecimen] = useState<string | null>(null);
   const [discoveredCamouflage, setDiscoveredCamouflage] = useState<string[]>([]);
 
@@ -195,15 +185,15 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
       if (!discoveredCamouflage.includes(id)) {
         const next = [...discoveredCamouflage, id];
         setDiscoveredCamouflage(next);
-        setScannedSpecimen(`🧬 High Accuracy Match!\n\nSpecimen: ${name}\nWavelength Filter: ${spectrum}nm\n\nAdaptation Mechanism: ${info}`);
+        setScannedSpecimen(`🎉 Bingo! Found the animal!\n\nAnimal discovered: ${name}\nGoggle setting: ${spectrum}nm\n\nHow they hide: ${info}`);
         if (next.length === 3) {
           confetti({ particleCount: 60, spread: 70 });
         }
       } else {
-        setScannedSpecimen(`Specimen ${name} is already registered in our laboratory log.`);
+        setScannedSpecimen(`You have already scanned the ${name}! Try to find the others!`);
       }
     } else {
-      setScannedSpecimen("❌ Signal Static. Refractory wave patterns did not reveal any active cellular camouflage at this frequency. Calibrate the wavelength slider!");
+      setScannedSpecimen("❌ Screen Static. No hidden animals seen at this goggle frequency. Slide the bar to find another light color!");
     }
   };
 
@@ -220,11 +210,11 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
             <ArrowLeft className="w-4 h-4" /> Map
           </button>
           <h2 className="text-xl md:text-2xl font-black text-mud-800 flex items-center gap-2 font-display">
-            🧪 Adaptation Research Lab & Simulation
+            🧪 Adaptation Research Lab & Games
           </h2>
         </div>
         <span className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 bg-[#F0F4E8] text-[#5F745E] border-2 border-[#D0DFC0] text-[10px] font-black uppercase rounded-full tracking-widest leading-none">
-          Scientific Workbench v1.2
+          Kid Station v1.2
         </span>
       </div>
 
@@ -233,9 +223,9 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
         <div className="flex flex-col md:flex-row items-center gap-5">
           <span className="text-5xl animate-pulse">🧬</span>
           <div>
-            <h3 className="text-lg font-black font-display text-tan-300">Biotic Stress Analysis & Adaptation Solvers</h3>
+            <h3 className="text-lg font-black font-display text-tan-300">Animal Adaptation Science Playgrounds</h3>
             <p className="text-xs text-sand-100 mt-1 max-w-2xl leading-relaxed">
-              Fifth and sixth-grade researchers, welcome to the testbed. Complete three physical and biological simulations to prove how mechanical energy, thermal conduction, and spectrum wavelengths determine survival or death in extreme habitats.
+              Hey young scientist! Welcome to our science games! Can you help our animal friends survive? Play the three fun games below to see how animals eat, stay warm, and hide in their habitats!
             </p>
           </div>
         </div>
@@ -244,33 +234,33 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
         <div className="grid grid-cols-3 gap-2 mt-6 bg-slate-800/80 p-1.5 rounded-2xl border border-white/5">
           <button
             onClick={() => setActiveGame("trophic")}
-            className={`py-3 text-xs font-black rounded-xl transition-all ${
+            className={`py-3 text-[10.5px] sm:text-xs font-black rounded-xl transition-all ${
               activeGame === "trophic"
                 ? "bg-tan-500 text-white shadow-sm"
                 : "text-sand-100 hover:bg-white/5 hover:text-white"
             }`}
           >
-            🌽 S1: Trophic Sorter
+            🍖 Game 1: Jaguar Diner
           </button>
           <button
             onClick={() => setActiveGame("thermal")}
-            className={`py-3 text-xs font-black rounded-xl transition-all ${
+            className={`py-3 text-[10.5px] sm:text-xs font-black rounded-xl transition-all ${
               activeGame === "thermal"
                 ? "bg-tan-500 text-white shadow-sm"
                 : "text-sand-100 hover:bg-white/5 hover:text-white"
             }`}
           >
-            ❄️ S2: Convection Huddle
+            ❄️ Game 2: Warm Huddle
           </button>
           <button
             onClick={() => setActiveGame("camouflage")}
-            className={`py-3 text-xs font-black rounded-xl transition-all ${
+            className={`py-3 text-[10.5px] sm:text-xs font-black rounded-xl transition-all ${
               activeGame === "camouflage"
                 ? "bg-tan-500 text-white shadow-sm"
                 : "text-sand-100 hover:bg-white/5 hover:text-white"
             }`}
           >
-            🌌 S3: Photic Camouflage
+            👓 Game 3: Nature Goggles
           </button>
         </div>
       </div>
@@ -278,19 +268,19 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
       {/* SIMULATOR WINDOW PANEL */}
       <div className="w-full bg-sand-50 rounded-[32px] border-2 border-[#E9E4DB] p-6 shadow-sm min-h-[400px] flex flex-col gap-6">
         
-        {/* GAME 1: TROPHIC LEVEL Predator Diet BUFFER */}
+        {/* GAME 1: JAGUAR DIET SORTER */}
         {activeGame === "trophic" && (
           <div className="flex flex-col gap-5 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-200 pb-4">
               <div>
-                <h4 className="font-extrabold text-base text-mud-800 font-display">Trophic Level: Tertiary Consumer Ecosystem Buffer</h4>
+                <h4 className="font-extrabold text-base text-mud-800 font-display">Jaguar Dinner: Feeding the Big Cat!</h4>
                 <p className="text-xs text-mud-700 font-semibold mt-1">
-                  Identify and classify digestible, high-nitrogen protein arrays for Panthera onca (Jaguar). Filter out carbon cell-wall producers and dangerous toxic secondary organisms.
+                  Help the jaguar eat! Feed him yummy meats, but throw away tough green leaves and dangerous poisonous frogs!
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-sage-100 text-[#5F745E] border border-[#D0DFC0] px-3 py-1.5 rounded-xl font-bold text-xs font-mono">
-                  Energy Recovered: {trophicScore}/8
+                  Points Score: {trophicScore}/8
                 </span>
                 <button
                   onClick={resetTrophicGame}
@@ -306,25 +296,25 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch">
                 {/* Active conveyor item visualization */}
                 <div className="md:col-span-2 p-6 rounded-3xl bg-white border-2 border-[#E9E4DB] flex flex-col items-center justify-center text-center gap-4 shadow-sm">
-                  <span className="text-[10px] uppercase font-black tracking-widest text-wood-500">CONVEYOR ENTRY:</span>
+                  <span className="text-[10px] uppercase font-black tracking-widest text-[#9c8970]">COMES ALONG INDEED:</span>
                   {trophicQueue.length > 0 ? (
-                    <div className="flex flex-col items-center gap-2 animate-pulse">
-                      <span className="text-7xl filter drop-shadow">{trophicQueue[0].emoji}</span>
+                    <div className="flex flex-col items-center gap-2">
+                      <span className="text-7xl filter drop-shadow animate-bounce">{trophicQueue[0].emoji}</span>
                       <h5 className="font-black text-xl text-mud-800 font-display">{trophicQueue[0].name}</h5>
                       <span className="text-[10px] bg-sand-150 px-2.5 py-1.5 rounded-md font-mono text-mud-700">
-                        Unknown chemical biomass signature
+                        Is this a yummy snack for a big cat?
                       </span>
                     </div>
                   ) : (
-                    <span className="text-xs text-mud-700 font-bold">Queue completely sorted!</span>
+                    <span className="text-xs text-mud-700 font-bold">All sorted!</span>
                   )}
                 </div>
 
                 {/* Sorter interface */}
                 <div className="md:col-span-3 flex flex-col justify-between gap-4">
                   <div className="bg-white p-5 rounded-3xl border border-sand-200 shadow-xs flex-1 flex flex-col gap-3 justify-center">
-                    <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1.5"><Sun className="w-4 h-4 text-amber-500" /> Lab Analyst Instruction:</span>
-                    <p className="text-xs font-semibold text-mud-750 font-mono leading-relaxed bg-sand-50/70 p-4 rounded-2xl border border-sand-100 max-h-[140px] overflow-y-auto">
+                    <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1.5"><Sun className="w-4 h-4 text-amber-500" /> Ranger Guide:</span>
+                    <p className="text-xs font-semibold text-mud-750 font-sans leading-relaxed bg-sand-50/70 p-4 rounded-2xl border border-sand-100 max-h-[140px] overflow-y-auto">
                       {trophicFeedback}
                     </p>
                   </div>
@@ -334,16 +324,16 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                       <button
                         onClick={() => handleTrophicSort("ingest")}
                         id="sort-ingest-btn"
-                        className="py-4 bg-[#607D53] hover:bg-[#526B47] text-white font-black rounded-2xl shadow-sm hover:shadow active:scale-95 transition-all text-xs border-0 cursor-pointer"
+                        className="py-4 bg-[#607D53] hover:bg-[#526B47] text-white font-black rounded-2xl shadow-sm hover:shadow active:scale-95 transition-all text-xs border-0 cursor-pointer text-center"
                       >
-                        🧬 Ingest (Valid Protein Prey)
+                        🍔 FEED THE JAGUAR!
                       </button>
                       <button
                         onClick={() => handleTrophicSort("discard")}
                         id="sort-discard-btn"
-                        className="py-4 bg-wood-500 hover:bg-wood-600 text-white font-black rounded-2xl shadow-sm hover:shadow active:scale-95 transition-all text-xs border-0 cursor-pointer"
+                        className="py-4 bg-wood-500 hover:bg-wood-600 text-white font-black rounded-2xl shadow-sm hover:shadow active:scale-95 transition-all text-xs border-0 cursor-pointer text-center"
                       >
-                        🗑️ Discard (Non-Diet/Hazardous)
+                        🗑️ DISCARD / SKIP IT!
                       </button>
                     </div>
                   )}
@@ -352,34 +342,34 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
             ) : (
               <div className="text-center py-10 flex flex-col items-center gap-4 animate-in zoom-in-95">
                 <span className="text-5xl">🏆</span>
-                <h4 className="text-xl font-black text-mud-850 font-display">Trophic Level Processing Complete!</h4>
+                <h4 className="text-xl font-black text-mud-850 font-display">Yummy Snacks Game Complete!</h4>
                 <p className="text-xs text-mud-700 font-bold max-w-md">
-                  Excellent simulation data, Ecologist. You filtered out energy-draining cellulose producers and avoided the fatal toxins of poison dart frogs, securing a 100% stable predator diet efficiency of {trophicScore}/8 points.
+                  Fantastic! You gave the jaguar high-energy meat foods and avoided poisonous frogs and dry forest leaves. The big cat is very happy and purring, with a score of {trophicScore}/8!
                 </p>
                 <button
                   onClick={resetTrophicGame}
                   className="mt-3 px-6 py-2.5 bg-tan-500 hover:bg-tan-600 text-white font-black text-xs rounded-xl shadow cursor-pointer border-0"
                 >
-                  Rerun Trophic Simulation
+                  Play Sorter Again!
                 </button>
               </div>
             )}
           </div>
         )}
 
-        {/* GAME 2: THERMAL CONVECTION HUDDLE */}
+        {/* GAME 2: COZY PENGUIN HUDDLE */}
         {activeGame === "thermal" && (
           <div className="flex flex-col gap-5 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-200 pb-4">
               <div>
-                <h4 className="font-extrabold text-base text-mud-800 font-display">Thermal Convection & Sub-Zero Wind Conductance Solver</h4>
+                <h4 className="font-extrabold text-base text-mud-800 font-display">Cozy Penguin Huddle: Share the Heat!</h4>
                 <p className="text-xs text-mud-700 font-semibold mt-1">
-                  Rotate nesting chicks between outer frost zones (-60°C convective drafts) and inner hyperthermic clusters (+35°C core heat) to maintain homeostasis.
+                  Antarctic blizzards are freezing! Help cold outside baby chicks (🥶 blue) swap into the warm center of other penguins (🥵 pink) to become cozy green!
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-sage-100 text-[#5F745E] border border-[#D0DFC0] px-3 py-1.5 rounded-xl font-bold text-xs font-mono">
-                  Cycle: {thermalCycles}/4 Completed
+                  Storm Waves: {thermalCycles}/4 Done
                 </span>
                 <button
                   onClick={resetThermalGame}
@@ -397,7 +387,7 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                 {/* Visual grid representing the penguin cluster */}
                 <div className="bg-[#EAF1F3] border-3 border-teal-200/50 p-6 rounded-3xl md:col-span-2 flex flex-col items-center justify-center gap-4 relative">
                   <span className="text-[10px] font-black uppercase tracking-wider text-teal-800 flex items-center gap-1 bg-white/60 px-2.5 py-1.5 rounded-lg border border-teal-200 animate-pulse absolute top-3 left-4">
-                    <Wind className="w-3.5 h-3.5 text-teal-600 animate-spin" style={{ animationDuration: "5s" }} /> CONVECTIVE WINDS PREVAILING
+                    <Wind className="w-3.5 h-3.5 text-teal-600 animate-spin" style={{ animationDuration: "5s" }} /> ❄️ FREEZING BLIZZARD WIND BLOWING
                   </span>
 
                   <div className="grid grid-cols-3 gap-4 w-full max-w-[320px] aspect-square p-4 bg-teal-100/30 border border-teal-200/60 rounded-full shadow-inner mt-4">
@@ -415,8 +405,6 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                         <button
                           key={chick.id}
                           onClick={() => {
-                            // Simple toggle selector swap: select outer first, then clicks inner to swap
-                            // Let's swap the first Cold found with this index
                             const firstColdIdx = huddle.findIndex(c => c.temp === "cold");
                             if (firstColdIdx !== -1 && firstColdIdx !== index) {
                               handleChickSwap(firstColdIdx, index);
@@ -425,25 +413,25 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                           className={`w-full aspect-square rounded-full border-2 flex flex-col items-center justify-center text-xs transition-transform hover:scale-105 select-none relative cursor-pointer ${tempStyle}`}
                         >
                           <span className="text-xl filter drop-shadow">{chick.emoji}</span>
-                          <span className="text-[9px] font-bold mt-0.5 tracking-tighter uppercase font-mono">
-                            {chick.temp === "cold" ? "🥶 Cold" : chick.temp === "hyperthermic" ? "🥵 Hot" : "✓ Gold"}
+                          <span className="text-[10px] font-bold mt-0.5 tracking-tighter uppercase font-sans">
+                            {chick.temp === "cold" ? "🥶 Cold" : chick.temp === "hyperthermic" ? "🥵 Hot" : "✓ Warm"}
                           </span>
                         </button>
                       );
                     })}
                   </div>
 
-                  <p className="text-[11px] font-bold text-teal-800 text-center max-w-sm mt-2">
-                     💡 <b>Ecologist Tweak:</b> Click any <b>🥶 Cold</b> chick, then click an inner chick to swap physical positions instantly and balance core thermoregulation!
+                  <p className="text-[11px] font-semibold text-teal-850 text-center max-w-sm mt-2">
+                     💡 <b>How to Play:</b> Click on any shivering <b>🥶 Cold</b> chick, then click a warm penguin in the middle to swap them so they can warm up!
                   </p>
                 </div>
 
                 {/* Wind simulation controls */}
                 <div className="flex flex-col justify-between p-5 rounded-3xl bg-white border border-sand-200 shadow-xs gap-3">
                   <div className="flex flex-col gap-2">
-                    <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1"><Landmark className="w-4 h-4 text-tan-500" /> Biotic Microclimate Log</span>
-                    <p className="text-xs text-mud-700 leading-relaxed font-mono">
-                      Antarctic winds strip heat via forced convection. Outer chicks guard the perimeter, experiencing heavy surface cooling. When wind strikes, perimeter chicks lose 1 core thermal wave. You must dynamically swap them to distribute metabolic energy.
+                    <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1"><Landmark className="w-4 h-4 text-tan-500" /> Huddle Microclimate Notes</span>
+                    <p className="text-xs text-mud-700 leading-relaxed font-sans">
+                      A penguin huddle is like a giant group hug! Outer penguins block the cold air while inner ones get super warm. When the blizzard wind hits, the outside ones get cold again. You must swap them to share the heat and keep everyone safe!
                     </p>
                   </div>
 
@@ -453,7 +441,7 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                       id="trigger-wind-btn"
                       className="py-4 bg-[#4A646E] hover:bg-[#3C5159] text-white font-black text-xs rounded-2xl border-0 shadow-sm transition-all active:scale-95 cursor-pointer flex items-center justify-center gap-2"
                     >
-                      <Wind className="w-4 h-4 text-sky-200" /> Trigger Cold Blizzard Winds ❄️
+                      <Wind className="w-4 h-4 text-sky-200 animate-pulse" /> Blow Snowy Wind ❄️💨
                     </button>
                   ) : null}
                 </div>
@@ -461,8 +449,8 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
               </div>
             ) : (
               <div className="text-center py-10 flex flex-col items-center gap-4 animate-in zoom-in-95">
-                <span className="text-5xl">🐧🌋</span>
-                <h4 className="text-xl font-black text-mud-850 font-display">Thermal Simulation Completed</h4>
+                <span className="text-5xl">🐧❤️</span>
+                <h4 className="text-xl font-black text-mud-850 font-display">Huddle Game Over!</h4>
                 <p className="text-xs text-mud-700 font-bold max-w-md">
                   {thermalResult}
                 </p>
@@ -470,26 +458,26 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                   onClick={resetThermalGame}
                   className="mt-3 px-6 py-2.5 bg-tan-500 hover:bg-tan-600 text-white font-black text-xs rounded-xl shadow cursor-pointer border-0"
                 >
-                  Restart Thermal Simulation
+                  Play Huddle Game Again!
                 </button>
               </div>
             )}
           </div>
         )}
 
-        {/* GAME 3: SPECTRAL CAMOUFLAGE MATCHING */}
+        {/* GAME 3: SUPER NATURE GOGGLES */}
         {activeGame === "camouflage" && (
           <div className="flex flex-col gap-5 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-200 pb-4">
               <div>
-                <h4 className="font-extrabold text-base text-mud-800 font-display">Adaptive Camouflage & Wavelength Spectrum Calibration</h4>
+                <h4 className="font-extrabold text-base text-mud-800 font-display">Super Nature Goggles: Spot Hidden Camouflage!</h4>
                 <p className="text-xs text-mud-700 font-semibold mt-1">
-                  Adjust visual spectrum radiation to compromise the physical camouflage of animals concealed in their respective terrains.
+                  Adjust your magic goggle filters to shine different kinds of light and spot hidden animals hiding in the forest or desert hills!
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-sage-100 text-[#5F745E] border border-[#D0DFC0] px-3 py-1.5 rounded-xl font-bold text-xs font-mono">
-                  Cataloged: {discoveredCamouflage.length}/3 Specimen
+                  Animals Discovered: {discoveredCamouflage.length}/3
                 </span>
                 <button
                   onClick={() => {
@@ -508,14 +496,14 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {/* Left Column: Camouflage Specimen targets */}
               <div className="flex flex-col gap-3">
-                <span className="text-xs font-black text-mud-800 uppercase tracking-wide">ENVIRONMENT TARGET BLOCKS:</span>
+                <span className="text-xs font-black text-mud-800 uppercase tracking-wide">WHERE TO LOOK:</span>
                 
                 <button
                   onClick={() => checkSpecimenScanner(
                     "autumn_fox", 
-                    "Red Fox (Deciduous Woods)", 
+                    "Red Fox in the Orange Leaves", 
                     [720, 800], 
-                    "Infrared Spectrum (750nm). In visible light, their orange coat blends perfectly into dry, oxidized copper canopy leaves. However, our thermal infrared sensor slices through chemical pigments, isolating their blood capillary heat signals directly against cool earth."
+                    "Tuning to Infrared Thermal Heat-Vision reveals the warm fox glowing bright red right through the cold, orange fall tree leaves!"
                   )}
                   className={`p-4 rounded-2xl border-2 text-left transition-all cursor-pointer flex items-center justify-between shadow-xs ${
                     discoveredCamouflage.includes("autumn_fox")
@@ -526,19 +514,19 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl">🍁</span>
                     <div>
-                      <h5 className="font-bold text-xs text-mud-850">European Foliage Layer</h5>
-                      <p className="text-[10px] text-mud-700 font-mono">Requires thermal band</p>
+                      <h5 className="font-bold text-xs text-mud-850">Orange Fall Woods</h5>
+                      <p className="text-[10px] text-mud-700 font-mono">Need: Thermal Heat-Vision</p>
                     </div>
                   </div>
-                  <span>{discoveredCamouflage.includes("autumn_fox") ? "🦊 Found!" : "❓"}</span>
+                  <span>{discoveredCamouflage.includes("autumn_fox") ? "🦊 Spotted!" : "❓ Hide"}</span>
                 </button>
 
                 <button
                   onClick={() => checkSpecimenScanner(
                     "chlorophyte_sloth", 
-                    "Symbiotic Sloth Canopy (Rainforest)", 
+                    "Mossy Sloth in the Canopy", 
                     [400, 480], 
-                    "Ultraviolet Spectrum (420nm). Chlorophyta green algae growing inside specialized hair ridges absorbs ultraviolet radiation heavily. Under UV sensors, the algae glows fluorescent-dark, instantly revealing the sloth against highly reflective kapok leaves."
+                    "Tuning to Ultraviolet light makes the green mossy algae on the sloth's fuzzy hair glow dark and outline clearly against bright kapok leaves!"
                   )}
                   className={`p-4 rounded-2xl border-2 text-left transition-all cursor-pointer flex items-center justify-between shadow-xs ${
                     discoveredCamouflage.includes("chlorophyte_sloth")
@@ -549,19 +537,19 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl">🌿</span>
                     <div>
-                      <h5 className="font-bold text-xs text-mud-850">Amazon Tree Canopy</h5>
-                      <p className="text-[10px] text-mud-700 font-mono">Requires ultraviolet filter</p>
+                      <h5 className="font-bold text-xs text-mud-850">Kapok Jungle Tree</h5>
+                      <p className="text-[10px] text-mud-700 font-mono">Need: Ultraviolet Goggles</p>
                     </div>
                   </div>
-                  <span>{discoveredCamouflage.includes("chlorophyte_sloth") ? "🦥 Found!" : "❓"}</span>
+                  <span>{discoveredCamouflage.includes("chlorophyte_sloth") ? "🦥 Spotted!" : "❓ Hide"}</span>
                 </button>
 
                 <button
                   onClick={() => checkSpecimenScanner(
                     "outback_marsupial", 
-                    "Red Kangaroo (Arid Outbacks)", 
+                    "Red Kangaroo in the Outback", 
                     [530, 580], 
-                    "Green Visible Band (550nm). The kangaroo's reddish fur relies on copper soil sand reflections. Scanning using green spectrum filters isolates non-green biological skin matrices, contrasting their fur perfectly from chlorophyll-deficient desert shrub grasses."
+                    "Tuning to Normal Green Camo goggles filters out the red sand background and highlights the kangaroo's brown fur instantly near the dry desert grass!"
                   )}
                   className={`p-4 rounded-2xl border-2 text-left transition-all cursor-pointer flex items-center justify-between shadow-xs ${
                     discoveredCamouflage.includes("outback_marsupial")
@@ -572,11 +560,11 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl">🏜️</span>
                     <div>
-                      <h5 className="font-bold text-xs text-mud-850">Arid Outback Ridge</h5>
-                      <p className="text-[10px] text-mud-700 font-mono">Requires visible cyan green range</p>
+                      <h5 className="font-bold text-xs text-mud-850">Red Sandy Plains</h5>
+                      <p className="text-[10px] text-mud-700 font-mono">Need: Green Camo range</p>
                     </div>
                   </div>
-                  <span>{discoveredCamouflage.includes("outback_marsupial") ? "🦘 Found!" : "❓"}</span>
+                  <span>{discoveredCamouflage.includes("outback_marsupial") ? "🦘 Spotted!" : "❓ Hide"}</span>
                 </button>
               </div>
 
@@ -585,13 +573,13 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                 
                 {/* Wavelength Slider calibration calibration */}
                 <div className="bg-white p-6 rounded-3xl border border-sand-200 shadow-sm flex flex-col gap-4">
-                  <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1.5"><Sun className="w-4 h-4 text-tan-500" /> SPECTRUPULSER WAVELENGTH:</span>
+                  <span className="text-xs font-black text-mud-800 uppercase flex items-center gap-1.5"><Sun className="w-4 h-4 text-tan-500" /> TUNE NATURE GOGGLE FILTER DIAL:</span>
                   
                   <div className="flex flex-col gap-1.5">
                     <div className="flex justify-between text-[11px] font-mono font-black text-mud-700">
-                      <span className="text-purple-600">💜 400nm (UV Light)</span>
-                      <span className="text-green-600">💚 550nm (Visible Green)</span>
-                      <span className="text-red-650">❤️ 800nm (Infrared Thermal)</span>
+                      <span className="text-purple-600">💜 400nm (Ultraviolet)</span>
+                      <span className="text-green-600">💚 550nm (Green Camo)</span>
+                      <span className="text-red-650">❤️ 800nm (Thermal Heat)</span>
                     </div>
                     <input
                       type="range"
@@ -607,7 +595,7 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
                     />
                     <div className="text-center mt-2">
                       <span className="p-2.5 bg-sand-100 border border-sand-250 rounded-xl font-mono text-xs font-black text-mud-850">
-                        Current Spectrum Calibration: {spectrum} nm
+                        Goggle Dial Frequency: {spectrum} nm
                       </span>
                     </div>
                   </div>
@@ -615,13 +603,13 @@ export const AdaptationLab: React.FC<AdaptationLabProps> = ({ onBack }) => {
 
                 {/* Spectral Readout Screen */}
                 <div className="bg-slate-900 border-2 border-tan-400/30 p-5 rounded-3xl flex flex-col gap-3 min-h-[160px] relative text-white">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#93c5fd] font-sans">Laboratory Spectral Readout:</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#93c5fd] font-sans">Goggle View Screen:</span>
                   <p className="text-xs font-semibold leading-relaxed font-mono whitespace-pre-line flex-1 text-sand-100">
-                    {scannedSpecimen ? scannedSpecimen : "Adjust the slider first, and click any environmental target block above to run a molecular scale wavelength scan!"}
+                    {scannedSpecimen ? scannedSpecimen : "Slide the bar first to pick a lens color, then click on one of the hidden areas on the left to activate your goggles!"}
                   </p>
                   {discoveredCamouflage.length === 3 && (
                     <div className="absolute top-2 right-2 px-2 py-0.5 bg-sage-500 text-white rounded-md text-[9px] font-black uppercase animate-pulse">
-                      Simulation complete ✓
+                      All Spied ✓ Excellent Spy Scientist!
                     </div>
                   )}
                 </div>

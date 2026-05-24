@@ -31,6 +31,7 @@ export default function App() {
   const [activeScreen, setActiveScreen] = useState<"map" | "hunt" | "badges" | "challenger" | "lab">("map");
   const [selectedContinentId, setSelectedContinentId] = useState<ContinentId | null>(null);
   const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   // Sync state to local storage synchronously when progress updates
   useEffect(() => {
@@ -79,22 +80,21 @@ export default function App() {
 
   // Safe helper to reset ALL progress
   const handleResetAllProgress = () => {
-    if (window.confirm("Are you sure you want to delete all found animals and badges and restart your world Safari? 🧭")) {
-      const freshProgress: UserProgress = {
-        foundAnimals: [],
-        completedQuizzes: [],
-        consecutiveDays: 1,
-        unlockedContinentBadges: [],
-        generalQuizScore: 0,
-        generalQuizzesTaken: 0
-      };
-      setProgress(freshProgress);
-      localStorage.removeItem("ecoexplorer_progress_v3");
-      localStorage.removeItem("ecoexplorer_streak");
-      setActiveScreen("map");
-      setSelectedContinentId(null);
-      setSelectedAnimal(null);
-    }
+    const freshProgress: UserProgress = {
+      foundAnimals: [],
+      completedQuizzes: [],
+      consecutiveDays: 1,
+      unlockedContinentBadges: [],
+      generalQuizScore: 0,
+      generalQuizzesTaken: 0
+    };
+    setProgress(freshProgress);
+    localStorage.removeItem("ecoexplorer_progress_v3");
+    localStorage.removeItem("ecoexplorer_streak");
+    setActiveScreen("map");
+    setSelectedContinentId(null);
+    setSelectedAnimal(null);
+    setShowResetConfirm(false);
   };
 
   // Extract selected continent data reference
@@ -135,7 +135,7 @@ export default function App() {
           </div>
 
           <button
-            onClick={handleResetAllProgress}
+            onClick={() => setShowResetConfirm(true)}
             id="reset-progress-header-btn"
             title="Reset Ranger Progress"
             className="px-3.5 py-1.5 bg-wood-500 hover:bg-wood-600 text-white font-bold text-xs rounded-full border border-wood-600/30 cursor-pointer active:scale-90 transition-transform flex items-center gap-1"
@@ -204,6 +204,43 @@ export default function App() {
           onClose={() => setSelectedAnimal(null)}
           onQuizCompleted={handleQuizCompleted}
         />
+      )}
+
+      {/* CUSTOM RESET MAP CONFIRMATION OVERLAY */}
+      {showResetConfirm && (
+        <div className="fixed inset-0 z-50 bg-mud-800/60 backdrop-blur-sm p-4 flex items-center justify-center animate-in fade-in duration-200 text-mud-800 select-none">
+          <div className="bg-sand-50 rounded-[32px] p-6 w-full max-w-sm border-3 border-tan-400 shadow-2xl text-center flex flex-col items-center gap-5 relative animate-in zoom-in-95 duration-200">
+            <div className="w-16 h-16 bg-wood-100 rounded-full flex items-center justify-center text-4xl animate-bounce">
+              🧭
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <h4 className="text-xl font-black text-mud-800 font-sans">
+                Restart Safari?
+              </h4>
+              <p className="text-xs text-mud-700 font-bold leading-relaxed">
+                Are you sure you want to delete all found animals and badges and restart your world Safari? This cannot be undone!
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2.5 w-full">
+              <button
+                onClick={handleResetAllProgress}
+                id="confirm-reset-yes-btn"
+                className="w-full py-3 bg-wood-500 hover:bg-wood-600 text-white font-extrabold text-sm rounded-2xl border-2 border-wood-600/35 shadow-sm active:scale-95 transition-all cursor-pointer text-center"
+              >
+                Yes, Start Fresh! 🗺️
+              </button>
+              <button
+                onClick={() => setShowResetConfirm(false)}
+                id="confirm-reset-no-btn"
+                className="w-full py-3 bg-sand-105 hover:bg-sand-200 text-mud-850 font-black text-sm rounded-2xl border border-sand-300 shadow-sm active:scale-95 transition-all cursor-pointer text-center"
+              >
+                No, Keep Exploring! 🔍
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Footer Branding Statement */}

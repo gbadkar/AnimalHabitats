@@ -176,6 +176,7 @@ export const AnimalModal: React.FC<AnimalModalProps> = ({
 
   // Next Question
   const handleNextQuizQuestion = () => {
+    const lastAnswer = selectedOption;
     setSelectedOption(null);
     setQuizAnswered(false);
 
@@ -184,7 +185,7 @@ export const AnimalModal: React.FC<AnimalModalProps> = ({
     } else {
       setQuizFinished(true);
       // If user score is perfect (or all correct) -> Unlock Badge!
-      const totalCorrect = quizScore + (selectedOption === quizQuestions[currentQuizIndex].answer ? 1 : 0);
+      const totalCorrect = quizScore + (lastAnswer === quizQuestions[currentQuizIndex].answer ? 1 : 0);
       const passed = totalCorrect === quizQuestions.length;
 
       if (passed && !isQuizAlreadyDone) {

@@ -8,18 +8,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border-emerald-200",
     hoverColorClass: "fill-emerald-400 stroke-emerald-650",
     landscapeBg: "bg-gradient-to-b from-sky-200 via-sky-50 to-emerald-900/45",
-    habitatDescription: "Diverse biomes of dense temperate coniferous rain forests, cold river networks, and rugged subalpine ranges.",
+    habitatDescription: "Cool pine forests, roaring mountain rivers, and snow-capped mountain peaks.",
     animals: [
       {
         id: "grizzly_bear",
         name: "Grizzly Bear",
-        species: "Ursus arctos horribilis",
+        species: "Ursus arctos (Brown Bear)",
         emoji: "🐻",
-        description: "An omnivorous apex predator and keystone species that regulates forest ecosystems, foraging across vast territories to deposit critical marine nitrogen from salmon carcasses into forest soils.",
-        diet: "Omnivorous (Forages on berries, roots, insects, and high-protein salmon during autumn hyperphagia)",
-        size: "Massive! Stands 7-8 feet tall bipedally; weighs 400-800 pounds to accumulate essential winter adipose tissue.",
-        funFact: "Grizzlies experience heavy seasonal hyperphagia, demanding they consume up to 20,000 calories daily to survive winter torpor (hibernation).",
-        habitatName: "Riparian Corridors & Subalpine Forests",
+        description: "Grizzly bears are big, fuzzy bears that love to play in cool rivers. They help pine trees grow tall by dropping salmon fish on the forest floor, which feeds the soil!",
+        diet: "Berries, sweet plant roots, and yummy orange salmon fish!",
+        size: "Super massive! Up to 8 feet tall when standing up, and as heavy as a small car!",
+        funFact: "Grizzlies need to eat up to 20,000 calories a day before taking a super long winter nap. That's like eating 40 whole pizzas in one single day!",
+        habitatName: "Forests & Rivers",
         coordinate: { x: 26, y: 70 },
         styleConfig: {
           rotation: "hover:rotate-6",
@@ -28,16 +28,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Grizzly bears undergo a period of intense feeding in autumn to build up fat reserves for winter torpor. What is this hormonal state called?",
-            options: ["Hyperphagia", "Estivation", "Convective cooling"],
-            answer: "Hyperphagia",
-            reason: "Hyperphagia is a biological drive where bears eat almost continuously, storing fat which is broken down to release metabolic water, energy, and heat during their long winter sleep."
+            question: "Why do Grizzly Bears eat so much food in the fall?",
+            options: ["To get ready for a long winter sleep", "To win a high-jump contest", "To grow fluffy feathers"],
+            answer: "To get ready for a long winter sleep",
+            reason: "Bears go to sleep for the winter because there is no food in the cold snow. Eating lots of food in the fall helps their bodies stay warm and healthy all winter long!"
           },
           {
-            question: "By dragging fish carcasses into forests, grizzlies function as a 'keystone species'. How does this specifically benefit the subalpine biome?",
-            options: ["It prevents water pollution from rotting fish", "It fertilizes the soil by transferring marine-derived nitrogen and phosphorus", "It feeds subterranean earthworms"],
-            answer: "It fertilizes the soil by transferring marine-derived nitrogen and phosphorus",
-            reason: "Grizzlies carry nutrient-rich salmon carcasses deep into the woods. The decomposition of these carcasses distributes vital nitrogen isotopes, fertilizing the surrounding pine trees and plants."
+            question: "How do Grizzly Bears help pine trees in the forest grow taller?",
+            options: ["They spray water on them using their ears", "They drop leftover rich salmon fish onto the dirt, which feeds the plants", "They sing sweet songs to the tree seeds"],
+            answer: "They drop leftover rich salmon fish onto the dirt, which feeds the plants",
+            reason: "When bears carry salmon into the forest and drop food scraps, it fertilizes the soil just like magic plant food! This helps pine trees scratch the sky!"
           }
         ]
       },
@@ -46,11 +46,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Bald Eagle",
         species: "Haliaeetus leucocephalus",
         emoji: "🦅",
-        description: "An elite raptor equipped with curved talons, a heavy hooked beak, and extraordinary binocular vision that commands coastal and inland riparian corridors.",
-        diet: "Piscivorous Carnivore (Primarily scans for fish, trout, and small waterfowl; also behaves as an opportunistic scavenger)",
-        size: "Impressive wingspan of 6-7.5 feet; exhibits prominent sexual dimorphism with larger females.",
-        funFact: "Eagles have two foveae (visual focal centers) in each eye, granting them up to 8x sharper vision than humans to spot an animal from two miles high.",
-        habitatName: "Canopy Nesting & Coastal Thermals",
+        description: "Bald Eagles are amazing birds of prey with huge wings and super-sharp eyes. They can zoom through the air and grab fish with their strong yellow claws!",
+        diet: "Mostly fresh fish and other small water animals!",
+        size: "A giant wingspan of 6 feet! That is wider than a tall grown-up spreading out their arms!",
+        funFact: "An eagle has eyes that are eight times sharper than ours. They can spot a tiny bunny wiggling from two whole miles high in the sky!",
+        habitatName: "Sky & Tall Treetops",
         coordinate: { x: 74, y: 30 },
         styleConfig: {
           rotation: "hover:-rotate-12",
@@ -59,25 +59,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "What aerodynamic adaptations do Bald Eagles use to glide across long distances while conserving vital metabolic energy?",
-            options: ["They generate high thermal lift and minimize drag using slotted wingtip feathers", "They flap continuously to overcome air resistance", "They minimize air pressure using a dynamic swim bladder"],
-            answer: "They generate high thermal lift and minimize drag using slotted wingtip feathers",
-            reason: "Slotted primary feathers reduce drag vortices at the wingtips. By catching rising columns of warm air (convective thermals), eagles can soar long distances with minimal biomechanical energy exertion."
+            question: "How do Bald Eagles soar in the sky for hours without getting tired?",
+            options: ["By catching warm rising air bubbles using their spread-out wingtip feathers", "By flapping their wings super-fast like a tiny hummingbird", "By holding their breath underwater"],
+            answer: "By catching warm rising air bubbles using their spread-out wingtip feathers",
+            reason: "Eagles have special feathers that spread out like fingers. They catch warm air bubbles rising from the warm ground, allowing them to ride the sky like a kite with almost no wing flaps!"
           },
           {
-            question: "Bald Eagles exhibit high nest fidelity, returning to the same 'eyrie' year after year. What is a remarkable physical consequence of this behavior?",
-            options: ["The nests are built exclusively floating on mountain lakes", "The nests grow through accumulation, often weighing up to 2,000 pounds!", "The nests are woven from soft spider silk to preserve humidity"],
-            answer: "The nests grow through accumulation, often weighing up to 2,000 pounds!",
-            reason: "Because eagles continuously reinforce their nests in large tree forks with thick branches and moss, these generational eyries can grow to massive sizes and heavily strain the host trees."
+            question: "Eagles return to the exact same nest (called an 'eyrie') every year. What happens to the nest over time?",
+            options: ["It floats away onto mountain lakes", "The nest grows bigger and heavier, sometimes weighing as much as a small truck!", "It turns into a fancy wooden birdhouse with a door"],
+            answer: "The nest grows bigger and heavier, sometimes weighing as much as a small truck!",
+            reason: "Eagles add new branches, twigs, and soft moss to their nests every single spring. Over many years, the nest can grow so heavy that it bends the tree!"
           }
         ]
       }
     ],
     extras: [
-      { id: "pine_tree", name: "Conifer Canopy", emoji: "🌲", x: 12, y: 55, funFact: "Conifers have specialized needle leaves with a thick waxy cuticle designed to inhibit transpiration and handle extreme freezing temperatures." },
-      { id: "salmon_jump", name: "Spawning Salmon", emoji: "🐟", x: 42, y: 82, funFact: "Spawning salmon display anadromous life cycles, migrating from ocean saltwater back to freshwater streams to spawn, guided by chemical olfactory markers." },
-      { id: "beaver_dam", name: "Beaver Wetlands", emoji: "🦫", x: 88, y: 78, funFact: "Beavers are ecosystem engineers. Their dams create wetland microclimates that sequester carbon, filter sediments, and raise local water tables." },
-      { id: "forest_shroom", name: "Mycorrhizal Fungi", emoji: "🍄", x: 58, y: 86, funFact: "Underground fungi form massive mutualistic mycorrhizal networks with tree roots, trading water and vital soil minerals for photosynthetic sugars." }
+      { id: "pine_tree", name: "Conifer Tree", emoji: "🌲", x: 12, y: 55, funFact: "Conifer needles have a thick waxy skin that stops water from escaping and helps them handle freezing winter ice!" },
+      { id: "salmon_jump", name: "Spawning Salmon", emoji: "🐟", x: 42, y: 82, funFact: "Salmon are amazing swimmers that travel from the wide salty ocean back to the tiny sweet rivers where they were born to lay eggs!" },
+      { id: "beaver_dam", name: "Beaver Wetlands", emoji: "🦫", x: 88, y: 78, funFact: "Beavers are nature's clever builders! Their wooden dams make nice wetlands that house frogs, filter muddy water, and keep forests green!" },
+      { id: "forest_shroom", name: "Mushroom Threads", emoji: "🍄", x: 58, y: 86, funFact: "Underground mushroom threads act like a forest telephone line! They trade soil food and water with tree roots in exchange for sweet solar sugars!" }
     ]
   },
   {
@@ -87,18 +87,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-teal-50 hover:bg-teal-100 text-teal-800 border-teal-200",
     hoverColorClass: "fill-teal-400 stroke-teal-650",
     landscapeBg: "bg-gradient-to-b from-sky-300 via-emerald-100 to-teal-900/40",
-    habitatDescription: "The high-density complex strata of the Amazon Basin, showcasing wet undergrowth and dense emergent canopies.",
+    habitatDescription: "Vibrant layer-cake rainforests, leafy tree canopies, and wide winding rivers.",
     animals: [
       {
         id: "jaguar",
         name: "Jaguar",
         species: "Panthera onca",
         emoji: "🐆",
-        description: "An enigmatic wild cat and keystone carnivore with an exceptionally powerful bite force capable of piercing reptilian shells, utilizing visual rosettes to master natural forest floor shadows.",
-        diet: "Carnivore (An opportunistic hunter of tapirs, caimans, capybaras, and river fish)",
-        size: "Stretching 5-6 feet with a muscular build; weighing 120-250 pounds of dense muscle.",
-        funFact: "Jaguars are highly atypical felines; they are strong swimmers that frequently utilize river rapids to ambush aquatic prey or cross ecosystems.",
-        habitatName: "Rainforest Stratum & Bank Shallows",
+        description: "Jaguars are beautiful big cats with black ring spots. They are great at climbing trees and are excellent swimmers who love to splash in river water!",
+        diet: "Wild pigs, river fish, and sometimes small turtles!",
+        size: "Up to 6 feet long and as heavy as two big school backpacks!",
+        funFact: "Jaguars are very special felines because they love swimming! They play and hunt in water, which most house cats really hate!",
+        habitatName: "Rainforest Floor & Rivers",
         coordinate: { x: 30, y: 74 },
         styleConfig: {
           rotation: "hover:rotate-3",
@@ -107,16 +107,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Jaguars display a physical coloration called 'rosettes' that includes center dots. What crucial ecological role does this pattern serve?",
-            options: ["It serves as warning coloration to ward off other carnivores", "It acts as disruptive coloration, blending them into dappled rainforest shadows", "It signals sexual maturity to prospective mates"],
-            answer: "It acts as disruptive coloration, blending them into dappled rainforest shadows",
-            reason: "Rosette spots breaks up the jaguar's physical outline (disruptive camouflage). This mimics the irregular spots of light filtering down through the dense jungle canopy, keeping them invisible as ambush hunters."
+            question: "What are the rose-like spots on a jaguar's fur called?",
+            options: ["Polka dots", "Rosettes", "Leopard stripes"],
+            answer: "Rosettes",
+            reason: "These pretty spots are called rosettes because they look like little roses. They help the jaguar hide perfectly in the dappled jungle shadows!"
           },
           {
-            question: "Unlike many domestic felines, Jaguars are strong swimmers. How does this behavior expand their ecological niche?",
-            options: ["It lets them forage on marine kelp", "It allows them to actively hunt semi-aquatic prey like caimans and capybaras!", "It helps them migrate to cold polar oceans"],
-            answer: "It allows them to actively hunt semi-aquatic prey like caimans and capybaras!",
-            reason: "Jaguars have adapted to riparian zones. They are excellent swimmers and routinely patrol river systems, allowing them to compete with crocodilians for high-energy aquatic prey."
+            question: "Unlike regular house cats, why do jaguars spend time in rivers?",
+            options: ["To play water polo with monkeys", "To cool off and hunt water animals like fish and caimans", "Because their fur turns blue in water"],
+            answer: "To cool off and hunt water animals like fish and caimans",
+            reason: "Jaguars are master swimmers! They patrol the rivers to catch tasty aquatic prey and keep cool under the hot jungle sun."
           }
         ]
       },
@@ -125,11 +125,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Sloth",
         species: "Bradypus variegatus",
         emoji: "🦥",
-        description: "An arboreal folivore characterized by an extremely low metabolic rate, relying on structural claw adaptations to spend their lives suspended upside-down in the jungle canopy.",
-        diet: "Folivore (Feeds on tough canopy leaves, utilizing specialized multi-chambered stomachs)",
-        size: "Approximately 2 feet tall; lightweight skeletal structure optimized for branch grip tension.",
-        funFact: "Sloths share a mutualistic relationship with green algae (chlorophyta) that grows within grooves on their hair, providing vital camouflage and supplemental nutrients.",
-        habitatName: "High Kapok Canopy & Overhangs",
+        description: "Sloths are super slow tree-climbers that live upside down in the rainforest. They are friendly, cute, and hold onto branches with magic hook claws!",
+        diet: "Tough green leaves that are hard to chew!",
+        size: "About 2 feet long, which is the size of a cute teddy bear!",
+        funFact: "Sloths move so slowly that tiny green plants (algae) grow right on their fur! This makes them look green, helping them hide from hungry hawks!",
+        habitatName: "High Jungle Trees",
         coordinate: { x: 68, y: 38 },
         styleConfig: {
           rotation: "hover:-rotate-6",
@@ -138,25 +138,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "What is a major evolutionary advantage of the mutualistic green algae growing on a sloth's fur?",
-            options: ["It provides a symbiotic camouflage layer and a supplemental source of dietary lipids", "It increases their body temperature on rainy days", "It deters mosquitoes using a toxic static charge"],
-            answer: "It provides a symbiotic camouflage layer and a supplemental source of dietary lipids",
-            reason: "The algae absorbs moisture, creating a green hue that camouflages the sloth in the canopy. Sloths also ingest nutrients and lipids directly from the algae when grooming their coarse fur."
+            question: "Why is having green algae plants growing on a sloth's fur helpful?",
+            options: ["It gives them a green camo coat to hide in the leaves!", "It makes them run super-fast like a lion", "It glows in the dark so they can find fruit"],
+            answer: "It gives them a green camo coat to hide in the leaves!",
+            reason: "The green algae blends perfectly with the green leaves of the forest trees! This makes the sloth look like a bunch of mossy leaves, keeping them safe."
           },
           {
-            question: "How does a sloth's extremely slow digestive system relate to its specialized folivorous diet?",
-            options: ["It digests food instantly to avoid loading down branches", "Leaves have low nutritional value and high toxins; a slow, multi-chambered stomach digests cell walls and filters toxins safely!", "It allows them to synthesize vitamin D from complete darkness"],
-            answer: "Leaves have low nutritional value and high toxins; a slow, multi-chambered stomach digests cell walls and filters toxins safely!",
-            reason: "Jungle leaves contain cellulose and chemical defense toxins. The sloth's slow, multi-chambered gut utilizes specialized bacteria to ferment and extract maximum nutrients from tough leaves, taking up to 30 days to process a single meal."
+            question: "A sloth's tummy is very slow and takes up to 30 days to digest one meal! Why?",
+            options: ["They forget to drink water", "Tough leaves are hard to digest; a slow tummy breaks them down step-by-step and filters toxins", "They only eat once a year"],
+            answer: "Tough leaves are hard to digest; a slow tummy breaks them down step-by-step and filters toxins",
+            reason: "Forest leaves are full of tough plant fiber and natural defense chemicals. A sloth's slow, multi-chambered stomach safely ferments and breaks them down to get every bit of energy!"
           }
         ]
       }
     ],
     extras: [
-      { id: "amazon_tree", name: "Kapok Canopy", emoji: "🌳", x: 74, y: 20, funFact: "Emergent Kapok trees can scale up to 200 feet, creating vital nesting microhabitats for structural canopy species." },
-      { id: "jungle_butterfly", name: "Blue Morpho", emoji: "🦋", x: 15, y: 35, funFact: "The vivid blue of a Morpho butterfly's wings is not chemical pigment, but structural coloration caused by microscopic scales diffracting light waves." },
-      { id: "toucan_bird", name: "Keel-Billed Toucan", emoji: "🪶", x: 88, y: 55, funFact: "The toucan's giant beak is honeycombed with air pockets for extreme weight reduction, serving as an active radiator for thermoregulation (heat dissipation)." },
-      { id: "frog_spot", name: "Poison Dart Frog", emoji: "🐸", x: 45, y: 84, funFact: "Dart frogs exhibit vivid aposematic (warning) coloration, signaling their hyper-lethal skin alkaloids derived from their native diet of toxic rainforest beetles." }
+      { id: "amazon_tree", name: "Kapok Tree", emoji: "🌳", x: 74, y: 20, funFact: "Giant Kapok trees can grow as tall as a 20-story building, making a perfect high-sky home for colorful jungle birds!" },
+      { id: "jungle_butterfly", name: "Blue Morpho", emoji: "🦋", x: 15, y: 35, funFact: "The bright blue wings of a Blue Morpho butterfly aren't painted! They have microscopic scales that reflect light like tiny mirrors to shine super bright blue!" },
+      { id: "toucan_bird", name: "Toucan", emoji: "🪶", x: 88, y: 55, funFact: "A toucan's massive beak is super lightweight, and it acts like a built-in fan to help them cool off on hot jungle afternoons!" },
+      { id: "frog_spot", name: "Poison Dart Frog", emoji: "🐸", x: 45, y: 84, funFact: "Poison dart frogs have bright red and blue skins that act like danger signs to warn predators: 'Do not eat me, I am poisonous!'" }
     ]
   },
   {
@@ -166,18 +166,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-blue-50 hover:bg-blue-100 text-blue-800 border-blue-200",
     hoverColorClass: "fill-blue-400 stroke-blue-650",
     landscapeBg: "bg-gradient-to-b from-blue-100 via-orange-50 to-amber-900/40",
-    habitatDescription: "The seasonal deciduous woodlands, mixed riverine floodplains, and dense scrub-grasslands of central Europe.",
+    habitatDescription: "Cozy woodlands, green fields where bunnies run, and underground burrow towns.",
     animals: [
       {
         id: "red_fox",
         name: "Red Fox",
         species: "Vulpes vulpes",
         emoji: "🦊",
-        description: "An incredibly adaptable, opportunistic carnivore showcasing keen acoustic localization skills, active across agricultural edges and deep deciduous forests.",
-        diet: "Opportunistic Omnivore (Preys on rodents, lagomorphs, worms, and seasonal wild berries)",
-        size: "Slender, agile frame weighing 10-18 pounds; optimized for jumping and fast escapes.",
-        funFact: "Red foxes can hear sub-surface mouse movements underneath deep sheets of snow, orienting themselves by sensing the Earth's magnetic fields to leap and capture prey.",
-        habitatName: "Deciduous Edge & Grass Fields",
+        description: "Red Foxes are clever, speedy animals with a fluffy red coat and a big bushy tail. They are great hunters who can hear tiny sounds!",
+        diet: "Mice, insects, earthworms, and delicious sweet berries!",
+        size: "About the size of a friendly house dog, weighing 10 to 15 pounds!",
+        funFact: "Red Foxes can hear a tiny mouse squeak and wiggle under deep, thick snow! They jump high up and dive nose-first into the snow to catch it!",
+        habitatName: "Meadows & Woods Edge",
         coordinate: { x: 72, y: 68 },
         styleConfig: {
           rotation: "hover:rotate-12",
@@ -186,16 +186,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "How do Red Foxes utilize Earth's geomagnetic field to capture sub-surface rodents buried under deep snow?",
-            options: ["They jump toward the magnetic north to align their leaps, improving hunting accuracy!", "They use magnetic currents to warm up freezing snow banks", "They navigate towards thermal active volcanoes"],
-            answer: "They jump toward the magnetic north to align their leaps, improving hunting accuracy!",
-            reason: "Using their compass sense, a fox maps the visual and audio vectors of a mouse. Jumping towards magnetic north ensures a fixed alignment relative to sound refraction, boosting successful hits under deep snow."
+            question: "How do Red Foxes catch mice hiding under deep winter snow?",
+            options: ["By using their super-sharp hearing and diving nose-first into the snow!", "By blowing hot air to melt the snow banks", "By digging with long metal spoons"],
+            answer: "By using their super-sharp hearing and diving nose-first into the snow!",
+            reason: "Foxes can hear a mouse wiggling under the snow from far away. They leap high into the air and dive down nose-first like a fuzzy lawn dart!"
           },
           {
-            question: "The fox's bushy tail, or 'brush', is an adaptation. What are its dual biological primary functions?",
-            options: ["It generates static electricity to stun bugs, and acts as a tracking anchor", "It acts as a counterbalance for sharp turns, and provides insulation for the face and paws in freezing sleep!", "It stores excess water like a desert camel's hump"],
-            answer: "It acts as a counterbalance for sharp turns, and provides insulation for the face and paws in freezing sleep!",
-            reason: "The brush works as a dynamic rudder when sprinting on a zig-zag vector. In sleep, the fox curls compactly, wrapping its tail over its delicate facial capillaries and digits to reduce thermal radiation loss."
+            question: "What does a fox use its warm, fluffy tail (called a brush) for?",
+            options: ["To sweep up leaves in their home", "To help them balance when running fast, and to wrap around their face like a warm winter blanket!", "To store drinking water for the summer"],
+            answer: "To help them balance when running fast, and to wrap around their face like a warm winter blanket!",
+            reason: "A fox's tail works like a tightrope walker's balancing pole when they make sharp turns, and it acts as a cozy sleeping bag for their nose when they sleep in the cold!"
           }
         ]
       },
@@ -204,11 +204,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Eurasian Badger",
         species: "Meles meles",
         emoji: "🦡",
-        description: "A highly social, stocky burrower with powerful structural adaptations for excavation, inhabiting extensive complex multi-generational underground tunnel systems.",
-        diet: "Omnivore (Ecosytem cleanser that feeds on earthworms, bulbs, acorns, small reptiles, and invertebrates)",
-        size: "Low-slung, robust skeletal structure; weighing 15-28 pounds of high mechanical power.",
-        funFact: "Badgers construct highly organized, clean subterranean networks called 'setts' that are passed down and expanded by badger clans for over a century.",
-        habitatName: "Sandy Silt Woods & Sub-surface Setts",
+        description: "Badgers are chubby, striped animals that love to dig deep holes! They build huge, clean underground homes called 'setts' where they live with their clans!",
+        diet: "Juicy earthworms, roots, plant bulbs, and wild acorns!",
+        size: "A short, sturdy body that weighs as much as three big watermelons!",
+        funFact: "Badgers are super tidy! They drag out dry grass beds to air them out in the warm sun, keeping their underground bedrooms fresh and clean!",
+        habitatName: "Underground Setts",
         coordinate: { x: 26, y: 78 },
         styleConfig: {
           rotation: "hover:-rotate-3",
@@ -217,25 +217,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "A badger family lives in an extensive network of sub-surface tunnels and chambers. What is the scientific term for these structures?",
-            options: ["Underground Setts", "Raptor Eyries", "Subalpine Glaciers"],
-            answer: "Underground Setts",
-            reason: "A badger territory has a main burrow called a 'sett' featuring sleeping nests, emergency escape routes, and nurseries, insulated from thermal swings."
+            question: "What is the name of a badger family's cozy underground home?",
+            options: ["An underground sett", "A high tree nest", "A water puddle"],
+            answer: "An underground sett",
+            reason: "A sett is a complex underground maze of tunnels, sleeping chambers, and nurseries that badgers dig out with their strong claws!"
           },
           {
-            question: "What hygiene behavioral adaptation is observed in Eurasian Badger clans inside their subterranean living quarters?",
-            options: ["They frequently flood their tunnels to flush pests", "They clean their sleeping areas, removing damp nesting vegetation to dry in the sun!", "They construct mud brick air vents using forest timber"],
-            answer: "They clean their sleeping areas, removing damp nesting vegetation to dry in the sun!",
-            reason: "Badgers are exceptionally tidy. They drag dry grass, straw, and moss underground for bedding, and regularly drag out damp, used bedding to minimize parasitic tick and flea lifecycles."
+            question: "How do badgers keep their underground homes tidy?",
+            options: ["They invite forest beetles to clean up", "They drag damp bedding out to sun-dry and bring in clean, fresh dry grass", "They sweep dirt using their tails"],
+            answer: "They drag damp bedding out to sun-dry and bring in clean, fresh dry grass",
+            reason: "Badgers hate fleas and ticks! They regularly swap out old, dusty bedding for new, clean dry plants to keep their home clean and safe."
           }
         ]
       }
     ],
     extras: [
-      { id: "birch_tree", name: "Deciduous Birch", emoji: "🌳", x: 80, y: 35, funFact: "Silver birch bark contains betulin, a hydrophobic organic resin that shields trees from decay, pests, and ambient water logging." },
-      { id: "red_mushroom", name: "Fly Agaric", emoji: "🍄", x: 14, y: 84, funFact: "The colorful Amanita muscaria mushroom contains powerful psychotropic neurotoxins designed to stun insect grubs and discourage root herbivores." },
-      { id: "hedgehog_meadow", name: "Swinhoe Hedgehog", emoji: "🦔", x: 48, y: 82, funFact: "Hedgehogs undergo state fluctuations during seasonal winter cold, entering an inactive state of hibernation where their pulse dips from 200 down to 10 beats per minute." },
-      { id: "snail_flower", name: "Garden Gastropod", emoji: "🐌", x: 60, y: 76, funFact: "Some land snails can survive extreme dry heat by entering dry-state estivation, sealing their shells with a dried waxy mucus barrier called an epiphragm." }
+      { id: "birch_tree", name: "Birch Tree", emoji: "🌳", x: 80, y: 35, funFact: "White birch tree bark is covered in a natural wax that acts like a handy rain jacket, protecting the wood from bugs!" },
+      { id: "red_mushroom", name: "Red Fungus", emoji: "🍄", x: 14, y: 84, funFact: "This bright red polka-dot mushroom acts like a warning sign! It is poisonous to keep hungry bugs and deer from eating it." },
+      { id: "hedgehog_meadow", name: "Hedgehog", emoji: "🦔", x: 48, y: 82, funFact: "Hedgehogs go to sleep during chilly winters! Their heartbeat drops from 200 beats a minute to just 10 beats to save energy." },
+      { id: "snail_flower", name: "Garden Snail", emoji: "🐌", x: 60, y: 76, funFact: "To stay safe in hot dry weather, garden snails pull into their shell and seal the door with a waxy mucus sheet so they don't dry out!" }
     ]
   },
   {
@@ -245,18 +245,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-amber-50 hover:bg-amber-100 text-amber-805 border-amber-200",
     landscapeBg: "bg-gradient-to-b from-amber-200 via-orange-50 to-orange-950/40",
     hoverColorClass: "fill-amber-400 stroke-amber-650",
-    habitatDescription: "The diverse grassy savannas, fluctuating riparian watering basins, and hot acacia plain woodlands.",
+    habitatDescription: "Wide sunny grasslands, muddy watering holes, and giant shade trees.",
     animals: [
       {
         id: "lion",
         name: "Lion",
         species: "Panthera leo",
         emoji: "🦁",
-        description: "An apex predator and the only social feline, forming highly cooperative family groups called 'prides' that utilize synchronized pack hunting tactics to take down fast savanna herbivores.",
-        diet: "Carnivore (Cooperative tracker of wildebeests, zebras, and buffaloes)",
-        size: "Extremely muscular; males can weigh up to 420 pounds with prominent dark protective manes.",
-        funFact: "A lion's low-frequency roar is designed to carry up to 5 miles (8 kilometers) through ambient savanna air, communicating group boundaries.",
-        habitatName: "Semi-Arid Savanna & Acacia Bluffs",
+        description: "Lions are big, beautiful cats that live in families called prides. The fathers have magnificent fuzzy manes, while the mothers do the teamwork hunting!",
+        diet: "Meat (herds of zebras and wild antelopes!)",
+        size: "Very massive! Can weigh up to 400 pounds, which is as heavy as five kids!",
+        funFact: "A lion's roar is so loud that other animals can hear it from five miles away! It tells others: 'This is my home! Go hunt somewhere else!'",
+        habitatName: "Grasslands & Savannas",
         coordinate: { x: 30, y: 64 },
         styleConfig: {
           rotation: "hover:rotate-6",
@@ -265,16 +265,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Unlike solitary big cats like tigers or jaguars, lions hunt cooperatively in prides. What is an evolutionary advantage of social group hunting?",
-            options: ["It reduces thermal sun damage to their coats", "It permits the capture of mega-herbivores and increases territories through organized defensive patrols", "It enables them to digest complex grasses"],
-            answer: "It permits the capture of mega-herbivores and increases territories through organized defensive patrols",
-            reason: "Organized pride hunting allows lions to overpower large, high-energy herd prey (like African buffaloes) that are too powerful and dangerous for a single feline to handle."
+            question: "Why do lions hunt in big groups (called prides) instead of alone?",
+            options: ["So they can take turns holding a map", "To work as a team to catch big, strong prey that one lion couldn't catch alone", "To practice their running races"],
+            answer: "To work as a team to catch big, strong prey that one lion couldn't catch alone",
+            reason: "Savanna herd animals are super-fast and strong. By working as an amazing feline team, lions can easily catch food and feed the whole family!"
           },
           {
-            question: "The thick dark mane of a mature male African Lion serves which primary physiological and behavioral purposes?",
-            options: ["It protects vital neck arterials during territory disputes, and works as an honest signal of testosterone and health", "It serves as solar panels to heat up their body core", "It filter-feeds dust particles during savannas sandstorms"],
-            answer: "It protects vital neck arterials during territory disputes, and works as an honest signal of testosterone and health",
-            reason: "Manes shield vulnerable throat pathways from rival claws during conflicts. A dark, thick mane of high density also signals high fitness and physical status to prospective prides."
+            question: "What is the main use of a male lion's beautiful, fluffy mane?",
+            options: ["To play peek-a-boo with cubs", "To protect their neck during fights and show everyone how healthy and strong they are", "To brush their cubs' hair"],
+            answer: "To protect their neck during fights and show everyone how healthy and strong they are",
+            reason: "A thick mane acts like a helmet for the lion's throat during play or territory battles, and healthy lions have the darkest, fluffiest manes!"
           }
         ]
       },
@@ -283,11 +283,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Hippopotamus",
         species: "Hippopotamus amphibius",
         emoji: "🦛",
-        description: "A semi-aquatic mega-herbivore with complex territorial behaviors, relying on riparian river basins and mud cover for active skin protection.",
-        diet: "Herbivore (Forages on savanna grasses during nocturnally cooler terrestrial hours)",
-        size: "Immense! Weighs up to 3,500 pounds, requiring heavy bone structures and specialized dense limbs.",
-        funFact: "Hippos possess specialized skin glands that secrete a red fluid with acidic bactericidal action, acting as a natural sunscreen (often called 'blood sweat').",
-        habitatName: "Fluctuating Riparian Waters & Silt Estuaries",
+        description: "Hippos are gigantic, round water-lovers that spend all day floating like rubber ducks in African rivers. They have super wide mouths to eat sweet grass!",
+        diet: "Green river-bank grass that they graze on at night!",
+        size: "Enormous! Weighs up to 3,500 pounds, which is as heavy as a big family minivan!",
+        funFact: "Hippos make their own pink skin oil that works as a natural sunscreen! It protects their skin from sunburns and kills germs!",
+        habitatName: "Rivers & Mud Pools",
         coordinate: { x: 74, y: 76 },
         styleConfig: {
           rotation: "hover:-rotate-6",
@@ -296,25 +296,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Hippos secrete a reddish, alkaline secretion from skin glands. What critical physiological roles does this 'blood sweat' serve?",
-            options: ["It carries high-potency toxic poisons to kill predators", "It acts as an broad-spectrum natural sunscreen, moisture sealer, and antiseptic barrier!", "It acts as a pheromone warning of low river levels"],
-            answer: "It acts as an broad-spectrum natural sunscreen, moisture sealer, and antiseptic barrier!",
-            reason: "Hippos lack sweat glands. This secretion absorbs UV radiation, prevents skin dehydration from blazing winds, and contains acidic compounds that fight bacterial infections in swampy rivers."
+            question: "What does a hippo's red 'blood sweat' do for its skin?",
+            options: ["It changes their skin color to matching pink", "It acts as a natural sunscreen, a skin lotion, and a shield against germs!", "It smells like sweet strawberry flowers"],
+            answer: "It acts as a natural sunscreen, a skin lotion, and a shield against germs!",
+            reason: "Hippos do not have sweat glands. This special pink slime blocks bad sunburns, stops skin from drying out in dry winds, and keeps river-water bugs away!"
           },
           {
-            question: "How do hippos actively influence the food webs of African freshwater river basins?",
-            options: ["They prey heavily on local river trout", "They transfer tons of digested nutrients from terrestrial grasslands into river basins through their waste, feeding aquatic life!", "They filter-feed on microscopic oceanic phytoplankton"],
-            answer: "They transfer tons of digested nutrients from terrestrial grasslands into river basins through their waste, feeding aquatic life!",
-            reason: "By feeding on shorelines at night and depositing processed organic matter into aquatic channels during day, hippos act as vital nutrient vectors, feeding diverse aquatic bacteria, fish, and freshwater ecosystems."
+            question: "How do hippos help river ecosystems stay healthy?",
+            options: ["They teach the fish how to swim", "They eat grass on land and drop plant food in the water through their waste, feeding small water animals!", "By blowing cold bubbles to make ice cubes"],
+            answer: "They eat grass on land and drop plant food in the water through their waste, feeding small water animals!",
+            reason: "Hippos eat tons of river grass on land, and then poop in the rivers! This transfers vital nutrients from land to water, feeding thousands of small larvae and river fish!"
           }
         ]
       }
     ],
     extras: [
-      { id: "savanna_tree", name: "Savanna Baobab", emoji: "🌳", x: 12, y: 45, funFact: "The Baobab tree is a drought adaptation master, storing up to 30,000 gallons of water in its fibrous, spongy trunk to endure seasonal dry spells." },
-      { id: "savanna_grass", name: "Zebra Grass", emoji: "🌾", x: 40, y: 75, funFact: "Savanna grasses rely on deep starch root systems that allow them to regenerate rapidly after grazing strikes or wildfires." },
-      { id: "clever_suricate", name: "Reticulated Giraffe", emoji: "🦒", x: 88, y: 48, funFact: "Giraffes have specialized long prehensile tongues up to 18 inches, with thick calloused margins, designed to strip leaves from thorny acacia bushes without tearing tissue." },
-      { id: "mud_splash", name: "Mineral Lick Mud", emoji: "💦", x: 62, y: 84, funFact: "Ecosystem mud holes hold concentrated trace minerals and clay salts that animals actively consume or roll in to purge gut parasitic worms." }
+      { id: "savanna_tree", name: "Baobab Tree", emoji: "🌳", x: 12, y: 45, funFact: "The Baobab tree is a water superhero! It stores up to 30,000 gallons of drinking water inside its spongy trunk to survive dry years!" },
+      { id: "savanna_grass", name: "Zebra Grass", emoji: "🌾", x: 40, y: 75, funFact: "Savanna grass has super deep roots! This lets them sprout back fresh and green even after huge savanna forest fires!" },
+      { id: "clever_suricate", name: "Giraffe", emoji: "🦒", x: 88, y: 48, funFact: "Giraffes have purple tongues up to 18 inches long! They are tough and leathery, letting them eat juicy leaves from thorny trees without getting hurt!" },
+      { id: "mud_splash", name: "Minerals Mud", emoji: "💦", x: 62, y: 84, funFact: "Mud holes contain healthy minerals! Animals roll around in the mud to cool off their skin and keep itchy bugs away." }
     ]
   },
   {
@@ -322,20 +322,20 @@ export const CONTINENTS_DB: ContinentData[] = [
     name: "Asia",
     emoji: "🐼",
     colorClass: "bg-red-50 hover:bg-red-100 text-red-800 border-red-200",
-    landscapeBg: "bg-gradient-to-b from-sky-200 via-rose-50 to-emerald-900/40",
     hoverColorClass: "fill-red-400 stroke-red-650",
-    habitatDescription: "From misty highland bamboo ranges to broad subtropical broadleaf jungle undergrowths.",
+    landscapeBg: "bg-gradient-to-b from-sky-200 via-rose-50 to-emerald-900/40",
+    habitatDescription: "Misty mountain forests full of bamboo, cherry blossoms, and wide rivers.",
     animals: [
       {
         id: "giant_panda",
         name: "Giant Panda",
         species: "Ailuropoda melanoleuca",
         emoji: "🐼",
-        description: "A specialized high-altitude bear with complex cranial structures optimized for fiber digestion, inhabiting temperate montane cloud forests.",
-        diet: "Herbivore (Bamboo shoots, roots, and fibrous pulp representing 99% of nutritional intake)",
-        size: "Approximately 4-5 feet long; robust jaw structures designed to process woody stalks.",
-        funFact: "Pandas lack typical ungulate ruminant guts, digesting cellulose inefficiently; they must consume up to 30-40 lbs of bamboo daily to absorb sufficient nutrients.",
-        habitatName: "Montane Cloud Bamboo Forests",
+        description: "Giant Pandas are big, cuddly black-and-white bears that love eating bamboo! They live in foggy, peaceful mountain forests in Asia.",
+        diet: "Almost 100% crunchy, green bamboo stalks and leaves!",
+        size: "About 5 feet long, weighing as much as fifteen kids' backpacks!",
+        funFact: "Pandas have a special extra wrist bone that acts like a handy thumb! This helps them hold onto slippery green bamboo stems perfectly!",
+        habitatName: "Misty Bamboo Highlands",
         coordinate: { x: 26, y: 72 },
         styleConfig: {
           rotation: "hover:rotate-6",
@@ -344,29 +344,29 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Why do Giant Pandas need to spend up to 12-16 hours every day consuming bamboo woody stalks?",
-            options: ["Bamboo has a highly complex, chemical defense pattern that slows them down", "As a member of the carnivore order, pandas have an inefficient carnivorous gut that digests tough plant cellulose poorly, demanding high ingestion volume!", "They rely on the chewing action to heat their body core"],
-            answer: "As a member of the carnivore order, pandas have an inefficient carnivorous gut that digests tough plant cellulose poorly, demanding high ingestion volume!",
-            reason: "Pandas evolved from carnivores and still possess simple digestive tracts typical of meat-eaters. They lack the multi-chambered cellulose-fermenting stomachs of cows, so they must consume huge volumes of bamboo to extract daily energy."
+            question: "Why must Giant Pandas spend up to 16 hours every single day eating bamboo?",
+            options: ["Because bamboo is full of sweet chocolate inside", "Because bamboo doesn't have much energy, so they must eat a lot of it to stay strong!", "Because their parents tell them not to waste food"],
+            answer: "Because bamboo doesn't have much energy, so they must eat a lot of it to stay strong!",
+            reason: "Pandas have stomachs like meat-eating bears, which aren't built for digesting plants. Since they digest other foods poorly, they have to eat up to 40 pounds of bamboo every single day!"
           },
           {
-            question: "What physical wrist adaptation do Giant Pandas possess that helps them hold slippery bamboo stems?",
-            options: ["An enlarged sesamoid bone that functions as an opposable 'pseudo-thumb'", "Retractable razor claws for scaling tree canopies", "Suction-cup pads similar to tropical geckos"],
-            answer: "An enlarged sesamoid bone that functions as an opposable 'pseudo-thumb'",
-            reason: "Pandas have a modified wrist bone called a radial sesamoid. It is covered by a muscular pad, acting as a flexible extra thumb to grasp, peel, and strip tough bamboo leaves with extreme motor control."
+            question: "What is the extra 'wrist bone' on a panda's paw used for?",
+            options: ["To act like an extra thumb so they can grip, strip, and hold bamboo stems", "To play a tiny thumb-wars game with friends", "To help them scale snowy mountains faster"],
+            answer: "To act like an extra thumb so they can grip, strip, and hold bamboo stems",
+            reason: "This bone is called a 'radial sesamoid' or pseudo-thumb. It works just like our thumb, letting the panda peel and eat woody stems with high-precision grip!"
           }
         ]
       },
       {
         id: "bengal_tiger",
         name: "Bengal Tiger",
-        species: "Panthera tigris tigris",
+        species: "Panthera tigris",
         emoji: "🐯",
-        description: "A formidable apex predator that lives in deep forests and wetlands, possessing distinctive camouflage stripes to execute high-impact ambush strikes.",
-        diet: "Carnivore (Solitary hunter of ungulates, deer, wild boars, and river banks crocodiles)",
-        size: "Massive! Reaching 9-10 feet in length; weighing 350-500 pounds of powerful strike potential.",
-        funFact: "A tiger's stripes are not just on its hair follicles, but are actual dermal pigment patterns directly in its skin.",
-        habitatName: "Riparian Swamps & Subtropical Sal Woods",
+        description: "Bengal Tigers are the largest master cats on Earth! They are orange with unique black stripes that help them hide in the tall reed grass.",
+        diet: "Deer, wild pigs, and other forest animals!",
+        size: "Up to 10 feet long and weighing as much as four grown-ups!",
+        funFact: "A tiger's stripes are pint-sized skin tattoos! Even if you shaved off a tiger's fur, the stripes would still be right there on its skin!",
+        habitatName: "Swamps & Thick Grasslands",
         coordinate: { x: 70, y: 64 },
         styleConfig: {
           rotation: "hover:-rotate-6",
@@ -375,25 +375,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Tiger stripes serve as 'disruptive camouflage'. If a tiger was completely solid orange, how would this affect its ecological success?",
-            options: ["It would lose the ability to swim in river delta networks", "Prey animals in dense grasses would spot its silhouette instantly, leading to starvation because tigers are short-burst ambush hunters!", "Solar heat absorption would rise to fatal levels"],
-            answer: "Prey animals in dense grasses would spot its silhouette instantly, leading to starvation because tigers are short-burst ambush hunters!",
-            reason: "Tigers are solitary predators that cannot chase prey over long distances. They rely on slipping through reeds unnoticed. Their vertical stripes break up their profile in grasslands, allowing them to close the distance for a strike."
+            question: "Why do tigers have black vertical stripes on their bodies?",
+            options: ["To show everyone they are forest referees", "To look like stripes of grass shadows, helping them sneak up close to wild deer", "To catch warm sun lines from the canopy"],
+            answer: "To look like stripes of grass shadows, helping them sneak up close to wild deer",
+            reason: "This is called camouflage! The black stripes blend with the vertical shadows of reeds and forest grass, so they look invisible to a passing deer!"
           },
           {
-            question: "Bengal Tigers inhabit coastal mangrove ecosystems like the Sundarbans. What aquatic behavior reinforces their survival there?",
-            options: ["They possess subcutaneous bladders to float permanently in saltwater", "They are strong swimmers, crossing wide tidal estuaries and hunting in aquatic channels!", "They rely on gills to sleep underwater"],
-            answer: "They are strong swimmers, crossing wide tidal estuaries and hunting in aquatic channels!",
-            reason: "Bengal Tigers are water-tolerant. In delta mangroves, they cross rivers up to 10 miles wide to track prey and secure territories, competing aggressively on water-land edges."
+            question: "Bengal Tigers swim across swamp channels. How does this help them survive?",
+            options: ["By hunting deep ocean sharks", "By crossing wide swamp rivers to track prey and stay cooled off", "By letting them drink salty sea water"],
+            answer: "By crossing wide swamp rivers to track prey and stay cooled off",
+            reason: "Unlike little domestic house cats, tigers are champion swimmers who cross wide rivers easily and can chase prey right into the jungle water!"
           }
         ]
       }
     ],
     extras: [
-      { id: "bamboo_stick", name: "High-Density Bamboo", emoji: "🎋", x: 12, y: 55, funFact: "Bamboo utilizes localized high-growth rhizome root systems, allowing shoots to grow up to 36 inches in 24 hours via cell expansion." },
-      { id: "cherry_bloom", name: "Cerasus Flora", emoji: "🌸", x: 80, y: 25, funFact: "Deciduous cherry blossoms bloom synchronously to overload seed predators, facilitating wide-scale forest pollination." },
-      { id: "cute_crane", name: "Red-Crowned Crane", emoji: "🦩", x: 42, y: 45, funFact: "Red-crowned cranes act as wetland indicator species; their population health reflects the levels of biological toxins in freshwater water tables." },
-      { id: "mist_mountain", name: "Tectonic Uplift Peaks", emoji: "🗻", x: 50, y: 15, funFact: "The Himalayas serve as a critical rain-shadow boundary, blocking moist monsoon clouds and generating the arid Tibetan cold deserts." }
+      { id: "bamboo_stick", name: "Bamboo stalks", emoji: "🎋", x: 12, y: 55, funFact: "Bamboo is the fastest growing plant in the world! It can grow as tall as you in just one single day!" },
+      { id: "cherry_bloom", name: "Cherry Bloom", emoji: "🌸", x: 80, y: 25, funFact: "Cherry blossoms bloom all at the exact same time in spring! This makes the trees look beautiful and attracts millions of friendly honeybees!" },
+      { id: "cute_crane", name: "Crane Bird", emoji: "🦩", x: 42, y: 45, funFact: "Red-Crowned cranes are highly protected birds! If they are happy and healthy, it means the wetland water is clean and fresh for everyone." },
+      { id: "mist_mountain", name: "Himalaya Peaks", emoji: "🗻", x: 50, y: 15, funFact: "The massive Himalaya mountains are so high they block rain clouds, creating a dry desert on one side and wet forests on the other!" }
     ]
   },
   {
@@ -403,18 +403,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-orange-50 hover:bg-orange-100 text-orange-850 border-orange-200",
     landscapeBg: "bg-gradient-to-b from-sky-200 via-orange-100 to-amber-955/40",
     hoverColorClass: "fill-orange-400 stroke-orange-650",
-    habitatDescription: "Extreme dry outback arid lands and hyper-specialized eucalyptus forest tracts.",
+    habitatDescription: "Dry red outback deserts, sandy ridges, and sweet-smelling eucalyptus trees.",
     animals: [
       {
         id: "kangaroo",
         name: "Red Kangaroo",
         species: "Macropus rufus",
         emoji: "🦘",
-        description: "The largest native marsupial, possessing massive hind tendons that function as elastic springs to migrate efficiently across vast, water-scarce deserts.",
-        diet: "Herbivore (Grazer of desert scrub-grasses, seed pods, and succulent cacti)",
-        size: "Stands up to 6 feet tall; muscular tail performs as a vital third limb for structural tripod support.",
-        funFact: "Kangaroo hopping behaves under elastic strain energy; their leg tendons rebound mechanical energy, reducing oxygen demands as speed increases.",
-        habitatName: "Xeric Outback Shrublands & Dunes",
+        description: "Red Kangaroos are large desert-hoppers from Australia! They have powerful legs that act like springs and a big pocket-pouch for baby joeys!",
+        diet: "Dry desert grass and sweet seeds!",
+        size: "Very tall! Can stand up to 6 feet high, which is taller than most kids!",
+        funFact: "A kangaroo's bouncy hops are super energy savers! Their leg tendons act like giant rubber bands that rebound off the ground!",
+        habitatName: "Outback Hills & Dunes",
         coordinate: { x: 30, y: 68 },
         styleConfig: {
           rotation: "hover:rotate-6",
@@ -423,16 +423,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "How does a Kangaroo's hopping biomechanics reflect an extraordinary metabolic energy-saving adaptation?",
-            options: ["Each bounce stores and releases elastic strain energy in their leg tendons, demanding less respiratory oxygen as speed increases!", "They rely on wind currents to lift their tails", "They digest lipids inside their pouches to generate lift"],
-            answer: "Each bounce stores and releases elastic strain energy in their leg tendons, demanding less respiratory oxygen as speed increases!",
-            reason: "Kangaroo tendons act like mechanical springs. When they land, energy is captured; when they push off, it rebounds. This makes hopping more energy-efficient than running on four limbs, helping them cross vast desert areas."
+            question: "Why do kangaroo leg tendons act like spring coils?",
+            options: ["They store and bounce energy, helping them hop long distances without getting tired!", "They make a funny squeak noise with each step", "They let them hop all the way to the moon"],
+            answer: "They store and bounce energy, helping them hop long distances without getting tired!",
+            reason: "Their leg tendons work just like giant rubber bands! When they hit the ground, the tendon stores energy and snaps it back to launch them forward, saving lots of oxygen!"
           },
           {
-            question: "Kangaroo reproduction is highly adapted to drought. What survival strategy do mother kangaroos display?",
-            options: ["They lay waterproof eggs under sandy river beds", "They can pause a newly fertilized embryo's development (embryonic diapause) until environmental conditions improve!", "They migrate to cold subalpine regions to give birth"],
-            answer: "They can pause a newly fertilized embryo's development (embryonic diapause) until environmental conditions improve!",
-            reason: "This is a key adaptation to volatile arid biomes. If food is scarce or water has run dry, the mother can pause the growth of an internal embryo until rain triggers plant growth, preventing metabolic strain."
+            question: "What is the kangaroo's large, muscular tail used for?",
+            options: ["To sweep up dust storms", "To act like a strong third leg to balance when hopping or resting", "To carry backup food"],
+            answer: "To act like a strong third leg to balance when hopping or resting",
+            reason: "A kangaroo's tail is packed with muscle! It acts as a safety kickstand when they stand, and a steering rudder when hopping around!"
           }
         ]
       },
@@ -441,11 +441,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Koala",
         species: "Phascolarctos cinereus",
         emoji: "🐨",
-        description: "An arboreal marsupial displaying high physical diet-specialization, adapted to occupy the high forks of eucalyptus zones.",
-        diet: "Folivore (Consumes leaves of specific eucalyptus species containing toxic terpene compounds)",
-        size: "Roughly 2.5 feet tall; dense, insulating gray fur balances volatile wind and rain exposures.",
-        funFact: "Koalas sleep up to 20 hours daily; their low-energy eucalyptus diet contains highly toxic tannins that demand heavy liver enzyme processing.",
-        habitatName: "Eucalyptus Canopy Forks & Dry Bushes",
+        description: "An adorable, fuzzy tree-hugger with a large black nose. They live in eucalyptus trees and love to sleep almost all day long!",
+        diet: "Eucalyptus leaves, which smell like clean medicine!",
+        size: "About the size of a fluffy puppy, up to 2.5 feet tall!",
+        funFact: "Koalas sleep for up to 20 hours a day because eucalyptus leaves are very low in energy and extremely hard to digest!",
+        habitatName: "Eucalyptus Treetops",
         coordinate: { x: 74, y: 35 },
         styleConfig: {
           rotation: "hover:-rotate-12",
@@ -454,25 +454,25 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "Eucalyptus leaves contain toxic terpenes and tannins that are lethal to other animals. How do Koalas manage to consume them?",
-            options: ["They boil the canopy leaves using early morning sun heat", "They possess specialized cytochrome P450 liver enzymes that break down and detoxify these compounds!", "They only eat petrified fossilized leaves"],
-            answer: "They possess specialized cytochrome P450 liver enzymes that break down and detoxify these compounds!",
-            reason: "Koalas are highly specialized. Their livers secrete complex enzymes to process toxic foliage. They also have a extremely long caecum containing symbiotic microflora to ferment tough plant cell walls."
+            question: "Eucalyptus leaves are poisonous to almost all animals. Why can koalas eat them safely?",
+            options: ["They wash the leaves in hot water baths", "Their livers have special cleaning filters that break down and clear the leaf toxins!", "They only eat fake leaves made of paper"],
+            answer: "Their livers have special cleaning filters that break down and clear the leaf toxins!",
+            reason: "Koalas are super specialized! Their bodies have complex digestive systems and liver filters that render the poisonous oils completely safe!"
           },
           {
-            question: "Why do koalas actively spend up to 18-22 hours of their day in complete physical inactivity?",
-            options: ["To digest complex fibers and limit oxygen expenditure because their specialized diet contains very low caloric value!", "To avoid falling from high eucalyptus branches during active winds", "To allow solar radiation to synthesize lipids on their fur"],
-            answer: "To digest complex fibers and limit oxygen expenditure because their specialized diet contains very low caloric value!",
-            reason: "Eucalyptus leaves provide very little digestible energy. Sleeping is a vital behavioral energy-conservation strategy, lowering their basal metabolic rate to manage their restrictive calorie budget."
+            question: "Why do koalas sleep for almost the entire day (up to 20 hours)?",
+            options: ["To save energy, because their leaves diet provides very little calories", "Because they are lazy bone play-athletes", "To practice sweet dreams in tree forks"],
+            answer: "To save energy, because their leaves diet provides very little calories",
+            reason: "Eucalyptus leaves are hard to digest and have low nutritional energy. Sleeping helps the koala lower its body needs so it doesn't run out of fuel!"
           }
         ]
       }
     ],
     extras: [
-      { id: "euca_trunk", name: "Sclerophyll Eucalyptus", emoji: "🌳", x: 78, y: 20, funFact: "Eucalyptus trees produce oil rich in flammable terpenes, which promote controlled forest fires to eliminate competing vegetation." },
-      { id: "desert_rock", name: "Sandstone Monolith", emoji: "⛰️", x: 12, y: 78, funFact: "Uluru is an underground-connected sandstone block whose red pigmentation stems from fast surface oxidation (iron rusting)." },
-      { id: "cute_cockatoo", name: "Sulphur Cockatoo", emoji: "🦜", x: 44, y: 30, funFact: "White cockatoos exhibit complex cognitive problem-solving, opening urban bins and warning flocks using targeted high-frequency alarm calls." },
-      { id: "outback_dust", name: "Spinifex Hummock", emoji: "🌾", x: 52, y: 82, funFact: "Spinifex grasses utilize deep silica-lined leaves to prevent surface evaporation, stabilizing outback dune systems from wind shear." }
+      { id: "euca_trunk", name: "Eucalyptus tree", emoji: "🌳", x: 78, y: 20, funFact: "Eucalyptus leaves contain yummy scented oils that koalas love, but they are highly flammable and can catch fire in hot outback summers!" },
+      { id: "desert_rock", name: "Uluru Rock", emoji: "⛰️", x: 12, y: 78, funFact: "Uluru is a giant red sandstone rock in Australia. It looks reddish-rusty because the iron in the rock is rusting in the air!" },
+      { id: "cute_cockatoo", name: "Cockatoo Bird", emoji: "🦜", x: 44, y: 30, funFact: "Clever white cockatoos can open backyard trash cans and warn their friends of danger using loud, high-pitched squawk calls!" },
+      { id: "outback_dust", name: "Spinifex Grass", emoji: "🌾", x: 52, y: 82, funFact: "Spinifex grass grows in round prickly cushions! Their tough, pointy leaves block dry winds and help stop sand dunes from blowing away." }
     ]
   },
   {
@@ -482,18 +482,18 @@ export const CONTINENTS_DB: ContinentData[] = [
     colorClass: "bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200",
     landscapeBg: "bg-gradient-to-b from-sky-300 via-cyan-50 to-slate-300/40",
     hoverColorClass: "fill-slate-300 stroke-slate-550",
-    habitatDescription: "Hyper-freezing glacial ice shelves, catastrophic convective blizzards, and deep benthic polar waters.",
+    habitatDescription: "Freezing cold ice sheets, snowy blizzards, and deep blue polar seas.",
     animals: [
       {
         id: "emperor_penguin",
         name: "Emperor Penguin",
         species: "Aptenodytes forsteri",
         emoji: "🐧",
-        description: "An incredibly cold-tolerant seabird utilizing deep sub-surface diving skills and complex social behaviors to raise young during polar winters.",
-        diet: "Carnivore (Fishes for krill, silverfish, and benthic cephalopods)",
-        size: "Stands 4 feet tall; layered, high-density feathers construct a robust thermal canopy.",
-        funFact: "Emperor Penguins can dive to depths of 1,700 feet (500 meters), holding their breath for over 20 minutes by reducing cardiovascular activity.",
-        habitatName: "Fast Ice Fields & Sub-Zero Waters",
+        description: "Emperor Penguins are champion cold-survivors! They are big, beautiful birds that slide on their bellies and live on the ice of Antarctica!",
+        diet: "Yummy silverfish, small krill, and squid!",
+        size: "Very tall! Up to 4 feet tall, which is about the same height as you!",
+        funFact: "Emperor Penguins can dive deep into freezing water, holding their breath for 20 minutes! That's longer than a whole school recess!",
+        habitatName: "Antarctic Ice Shelves",
         coordinate: { x: 28, y: 72 },
         styleConfig: {
           rotation: "hover:-rotate-6",
@@ -502,16 +502,16 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "How do male Emperor Penguins manage to incubate a clutch egg for 65 sub-zero days without eating or moving?",
-            options: ["They protect the egg on top of their fast feet under a specialized abdomen fold (brood patch), relying on deep adipose reserves!", "They bury the egg under hot sulfur geysers", "They share thermal duties with sea whales"],
-            answer: "They protect the egg on top of their fast feet under a specialized abdomen fold (brood patch), relying on deep adipose reserves!",
-            reason: "The brood patch is a featherless, highly vascularized skin flap. Keeping the egg balanced on their feet isolates it from ice currents, warming it up to 98°F (37°C) while the male survives on high fat reserves."
+            question: "How do male Emperor Penguins keep their egg warm during the freezing winter?",
+            options: ["They balance the egg on top of their feet under a cozy warm belly flap called a brood patch", "They bury the egg under warm snow blankets", "They ask a polar bear to sit on it"],
+            answer: "They balance the egg on top of their feet under a cozy warm belly flap called a brood patch",
+            reason: "Penguins do not build nests of twigs. Instead, they balance the delicate egg perfectly on their feet and cover it with a warm, featherless skin fold to keep it warm at 98°F!"
           },
           {
-            question: "Emperor Penguin colonies utilize dense huddling behaviors. What is the physical thermodynamic mechanism of this adaptation?",
-            options: ["It blocks UV radiation from reflective snow fields", "It minimizes exposed surface area to volume, reducing individual heat loss by up to 50% and capturing a warm microclimate!", "It generates seismic vibrations that break up solid ice shelves"],
-            answer: "It minimizes exposed surface area to volume, reducing individual heat loss by up to 50% and capturing a warm microclimate!",
-            reason: "A huddle acts as a single super-organism. By packing tightly together, penguins reduce the cold air drafts flowing over their feathers. The interior path coordinates a microclimate of up to 95°F (35°C), saving immense metabolic energy."
+            question: "Why do penguins huddle closely together in a giant, friendly cluster?",
+            options: ["To share body heat, shielding each other from freezing winds and keeping everyone cozy!", "To play a big game of freeze-tag", "To look like a giant ice monster"],
+            answer: "To share body heat, shielding each other from freezing winds and keeping everyone cozy!",
+            reason: "A penguin huddle is like a giant group hug! By packed tightly together, they block the cold drafts and create a cozy warm microclimate up to 95°F inside, taking turns moving in and out!"
           }
         ]
       },
@@ -520,11 +520,11 @@ export const CONTINENTS_DB: ContinentData[] = [
         name: "Blue Whale",
         species: "Balaenoptera musculus",
         emoji: "🐋",
-        description: "The largest mammal in Earth's evolutionary history; a baleen filter-feeder that migrates to polar oceans to exploit high-density nutrient upwellings.",
-        diet: "Planktivorous Carnivore (Filters massive volumes of water to capture millions of small krill crustacea)",
-        size: "Colossal! Reaches lengths of 90-100 feet; weighing up to 150-190 tons.",
-        funFact: "A blue whale's vocalization can reach 188 decibels, propagating across ocean basins for hundreds of miles to map geographic terrains.",
-        habitatName: "Pelagic Upwelling Zones & Polar Rifts",
+        description: "Blue Whales are the biggest, most magical giants in Earth's history! They make massive water fountains and sing ocean songs.",
+        diet: "Millions of tiny, pink shrimp-like creatures called Krill!",
+        size: "Colossal! Up to 100 feet long—longer than three big yellow school buses parked nose-to-tail!",
+        funFact: "A blue whale's tongue weighs as much as a whole adult elephant, and its heart is as big as a small car! That is one giant heart!",
+        habitatName: "Deep Frozen Oceans",
         coordinate: { x: 72, y: 58 },
         styleConfig: {
           rotation: "hover:rotate-6",
@@ -533,64 +533,64 @@ export const CONTINENTS_DB: ContinentData[] = [
         },
         questions: [
           {
-            question: "How do Blue Whales process millions of tiny krill from deep polar ocean water while preventing ingestion of massive saltwater volumes?",
-            options: ["They use specialized filter structures called 'baleen plates' made of keratin to trap krill while pushing water out using their tongue!", "They rely on long acidic tentacles to stun crustacea", "They swallow whole schools intact, later filtering salt in specialized renal pathways"],
-            answer: "They use specialized filter structures called 'baleen plates' made of keratin to trap krill while pushing water out using their tongue!",
-            reason: "Instead of teeth, blue whales have fibrous baleen plates. They gulp water, expand their ventral throat pleats, and then use their titanic tongue to compress the pocket, straining water through baleen while trapping tons of krill."
+            question: "How do Blue Whales process millions of tiny krill from deep ocean water while preventing ingestion of massive saltwater volumes?",
+            options: ["Using safe comb-like filter plates called baleen to trap krill while pushing out water with their tongue!", "Using long tentacles to grab individual krill", "By drinking all water and spitting salt from their ears"],
+            answer: "Using safe comb-like filter plates called baleen to trap krill while pushing out water with their tongue!",
+            reason: "Whales do not have regular teeth! They have combs of fingernail-like material called baleen. They gulp water, squeeze it out with their gigantic tongue, and eat the tasty trapped krill!"
           },
           {
-            question: "During polar summer, cold deep-water ocean currents rise to the surface. What is this crucial marine process called, and how does it feed whales?",
-            options: ["Eutrophication of nitrogen runoffs", "Ocean Upwelling, which carries deep nitrates and minerals to the surface, triggering massive phytoplankton blooms that feed swarms of krill!", "Tidal gravity subduction"],
-            answer: "Ocean Upwelling, which carries deep nitrates and minerals to the surface, triggering massive phytoplankton blooms that feed swarms of krill!",
-            reason: "Upwelling brings mineral-filled deep water to the sunlit photic zone. This triggers rapid microscopic plant growth (phytoplankton), which in turn feeds astronomical numbers of krill, attracting blue whales to feed."
+            question: "What is the oceanic process of deep-water nutrients rising to the surface called, which feeds the whales' favorite snack (krill)?",
+            options: ["Ocean Upwelling, which carries deep nitrates to the surface, triggering huge plant blooms that feed swarms of krill!", "Salt crystal cooking", "Tidal wave surfing"],
+            answer: "Ocean Upwelling, which carries deep nitrates to the surface, triggering huge plant blooms that feed swarms of krill!",
+            reason: "Upwelling brings mineral-filled deep water to the sunlit zone. This triggers rapid microscopic plant growth (phytoplankton), which in turn feeds astronomical numbers of tasty krill!"
           }
         ]
       }
     ],
     extras: [
-      { id: "iceberg_floating", name: "Thermohaline Glacier", emoji: "🏔️", x: 14, y: 38, funFact: "Icebergs break off from terrestrial glaciers. Because ice is roughly 10% less dense than cold seawater, 90% of its volume rests underwater." },
-      { id: "krill_swarm", name: "Euphausiid Krill Swarms", emoji: "🦐", x: 80, y: 84, funFact: "Polar krill gather in gargantuan swarms that can stretch for miles, acting as the fundamental trophic foundation of the entire ocean food web." },
-      { id: "funny_snowman", name: "Scientific Core", emoji: "⛄", x: 50, y: 76, funFact: "Ice cores drilled in Antarctica trap tiny pockets of atmosphere from up to 800,000 years ago, serving as historical records of carbon dioxide levels." },
-      { id: "polar_sky", name: "Auroral Magnetosphere", emoji: "🌌", x: 48, y: 15, funFact: "The Southern Lights arise when solar winds (ionized protons and electrons) collide with gases in Earth's upper magnetic field lines, releasing light." }
+      { id: "iceberg_floating", name: "Iceberg Glacier", emoji: "🏔️", x: 14, y: 38, funFact: "Icebergs are giant floating ice rocks! Since ice is lighter than water, only 10% of the iceberg peaks above water, while the rest hides below!" },
+      { id: "krill_swarm", name: "Krill Swarms", emoji: "🦐", x: 80, y: 84, funFact: "Little pink krill swim in giant groups that stretch for miles! They are the most important snack in the ocean, feeding penguins, fish, and big whales!" },
+      { id: "funny_snowman", name: "Ice-Core Snowman", emoji: "⛄", x: 50, y: 76, funFact: "Scientists drill deep into Antarctic ice to pull out ice tubes. These tubes contain tiny air bubbles from thousands of years ago, matching ancient air!" },
+      { id: "polar_sky", name: "Southern Lights", emoji: "🌌", x: 48, y: 15, funFact: "The Southern Lights (Aurora) are magical green and purple lights that dance in the polar night sky when space particles bump into Earth's protection shield!" }
     ]
   }
 ];
 
 export const GENERAL_QUIZ_POOL: QuizQuestion[] = [
   {
-    question: "Which term describes a species (like the grizzly bear or jaguar) that has a disproportionately large impact on its natural community, maintaining ecosystem diversity?",
-    options: ["Invasive species", "Keystone species", "Secondary consumer"],
+    question: "Which special name describes an animal (like a grizzly bear or jaguar) that is super important for keeping their entire habitat healthy?",
+    options: ["Keystone species", "Invasive species", "Water glider"],
     answer: "Keystone species",
-    reason: "Keystone species operate like the central stone in a stone arch. If removed, the ecological balance collapses, drastically altering prey, plant, and fungal populations."
+    reason: "Keystone species are like the middle puzzle piece of an arch! If you remove them, the whole arch collapses and other plants and animals lose their homes."
   },
   {
-    question: "What is an aerodynamic advantage of the slotted wingtip feathers (primary feathers) observed in soaring raptors like the Bald Eagle?",
-    options: ["They generate chemical propulsion", "They reduce induced drag vortices and harness thermal updrafts efficiently", "They store moisture to prevent temperature dehydration"],
-    answer: "They reduce induced drag vortices and harness thermal updrafts efficiently",
-    reason: "By separating wingtip feathers, eagles produce tiny high-pressure vents. This dampens circular air eddies (drag vortices), allowing massive gliding distances without burning critical metabolic energy."
+    question: "How do Bald Eagles soar in the sky for a long time without getting tired?",
+    options: ["By catching rising bubbles of warm air (thermal currents)", "By flapping their wings super-fast like a bumblebee", "By holding onto helium party balloons"],
+    answer: "By catching rising bubbles of warm air (thermal currents)",
+    reason: "Eagles spread out their slotted feathers to ride bubbles of warm air rising from the ground, soaring with almost zero wing flaps!"
   },
   {
-    question: "Sloths have a mutualistic relationship with green algae (chlorophyta). What is mutualism?",
-    options: ["An ecological interaction where one species suffers while the other benefits", "A symbiotic relationship where both species derive mutual evolutionary benefits!", "A temporary predatory chase"],
-    answer: "A symbiotic relationship where both species derive mutual evolutionary benefits!",
-    reason: "In mutualism, both species gain. The sloth receives protective camouflage and skin lipids, while the algae gets a safe, hydrated habitat and nitrogen compounds from sloth hair."
+    question: "Sloths have green algae plants growing directly on their fur, which helps them hide. What is this type of friendly relationship called?",
+    options: ["A mutual helper partnership (mutualism)", "An animal wrestle match", "A leaf eating contest"],
+    answer: "A mutual helper partnership (mutualism)",
+    reason: "In mutualism, both sides help each other! The sloth gets free camouflage, and the green algae gets a wet, safe home to live in!"
   },
   {
-    question: "How do male Emperor Penguins manage to keep their eggs warm on frozen Antarctic shelves in high winter storms?",
-    options: ["By nesting deep inside geothermal active volcanic vents", "By balancing the egg on their vascular feet under a specialized abdomen skin patch", "By burying the egg under insulating snow dunes"],
-    answer: "By balancing the egg on their vascular feet under a specialized abdomen skin patch",
-    reason: "Male penguins have a featherless brood patch high in blood vessels. Placing the egg upon their feet shields it from glacial convection currents and supplies body heat via direct contact."
+    question: "Where do male Emperor Penguins keep their delicate egg to warm it up in Antarctica?",
+    options: ["Burying it under warm snow piles", "Balancing it on their feet under a cozy belly skin flap", "Inside a geothermal hot volcano"],
+    answer: "Balancing it on their feet under a cozy belly skin flap",
+    reason: "Since Antarctica is fully made of cold ice, male penguins carry the egg on their feet under a warm vascular belly pouch to keep it cozy at 98°F!"
   },
   {
-    question: "What biological factor explains why Koalas can feed primarily on toxic Eucalyptus leaves which would kill other mammals?",
-    options: ["They crush toxic leaves under heavy gizzard stones in their stomach", "They secrete complex Cytochrome P450 enzymes inside their liver to break down toxins safely!", "They store the toxic tannins in their tails to release later"],
-    answer: "They secrete complex Cytochrome P450 enzymes inside their liver to break down toxins safely!",
-    reason: "Koalas possess an expanded gene bank for Cytochrome P450 liver proteins. These specialized enzymes bind to and detoxify eucalyptus terpenes, filtering them out before they reach target organs."
+    question: "Eucalyptus leaves can be highly poisonous to other creatures. How do Koalas digest them safely?",
+    options: ["They boil the leaves in hot river water", "Their livers have special cleaning filters that detoxify the leaves safely!", "They only eat fake leaves made of paper"],
+    answer: "Their livers have special cleaning filters that detoxify the leaves safely!",
+    reason: "Koalas are amazing specialists! Their bodies are custom-made to break down tough plant chemicals, rendering poisonous leaves completely harmless!"
   },
   {
-    question: "How does the Red Kangaroo save oxygen and conserve physical energy while bounding across dry Outback shrublands?",
-    options: ["They absorb trailing wind currents via prehensile ears", "Their powerful leg tendons dynamically act as mechanical springs, storing and releasing elastic strain energy!", "They collapse their lungs to reduce internal friction"],
-    answer: "Their powerful leg tendons dynamically act as mechanical springs, storing and releasing elastic strain energy!",
-    reason: "Kangaroo tendons function like high-response elastic rubber bands. Upon impact, kinetic energy is conserved; upon rebound, it launches them forward, reducing active muscle work at high speeds."
+    question: "How does a Kangaroo save leg energy while jumping across hot Australian deserts?",
+    options: ["Their powerful leg tendons act like elastic rubber bands, storing and releasing bounce-power!", "They float on desert breeze waves using their long ears", "They ride on the backs of giant emu birds"],
+    answer: "Their powerful leg tendons act like elastic rubber bands, storing and releasing bounce-power!",
+    reason: "Each bounce stores energy in their leg tendons like a pogo stick. When they jump off, the tendon recoils and launches them forward with very little effort!"
   }
 ];
